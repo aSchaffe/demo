@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "alt": "Mein JSON laden Bild",
+      "title": "Habe dieses Bild mit JSON nachgeladen",
+      "width": "620",
+      "height": "794",
+      "src": "files/img/small/weinflasche.jpg"
+    },
+    {
+      "alt": "Mein JSON Bild",
+      "title": "Habe dieses Bild nachgeladen",
+      "width": "555",
+      "height": "370",
+      "src": "files/img/small/cocktail.jpg"
+    }
+  ]
+}

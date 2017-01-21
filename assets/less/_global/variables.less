@@ -1,0 +1,172 @@
+/*
+Copyright Axel Schaffrath
+*/
+
+//
+// Variables
+// --------------------------------------------------
+
+//== Media queries breakpoints
+//
+//## Viewports 12 grid max 1220px
+
+@phoneLandscapeViewport:  29.9375rem;   // 480px  - xs
+@tabletPortraitViewport:  46.875rem;    // 768px  - sm
+@tabletLandscapeViewport: 62.5rem;      //1024px  - md
+@desktopViewport:         75rem;        //1240px  - lg
+
+@desktopMaxWidth:         80rem;    //1200px + outside padding left and right / à 15px  - container-fluid
+
+
+//== Colors
+//
+//## Grey and brand colors
+
+@gray-base:               #000;
+@gray-darker:             #222;
+@gray-dark:               #333;
+@gray:                    #666;
+@gray-light:              #777;
+@gray-lighter:            #eee;
+
+//** Font Color Basic configuration
+
+//*** CI Base Color
+
+@baseColor:               #3b3b3b;
+@redColor:				  #eb2f54;
+@whiteColor:			  #ffffff;
+@lilaColor:               #51515D;
+
+//*** CI Base Color lighten
+
+@baseColor-lighten-1:     lighten(@baseColor, 12%);
+@baseColor-lighten-2:     lighten(@baseColor, 15%);
+@baseColor-lighten-3:     lighten(@baseColor, 18%);
+
+@redColor-lighten-1:      lighten(@redColor, 12%);
+@redColor-lighten-2:      lighten(@redColor, 15%);
+@redColor-lighten-3:      lighten(@redColor, 18%);
+
+@whiteColor-lighten-1:    lighten(@whiteColor, 12%);
+@whiteColor-lighten-2:    lighten(@whiteColor, 15%);
+@whiteColor-lighten-3:    lighten(@whiteColor, 18%);
+
+//*** CI Base Color darken
+
+@baseColor-darken-1:      darken(@baseColor, 12%);
+@baseColor-darken-2:      darken(@baseColor, 15%);
+@baseColor-darken-3:      darken(@baseColor, 18%);
+
+@redColor-darken-1:       darken(@redColor, 12%);
+@redColor-darken-2:       darken(@redColor, 15%);
+@redColor-darken-3:       darken(@redColor, 18%);
+
+//*** Link Color
+
+@baseLinkColor:           @redColor;
+@thirdLinkColor:          #fff;
+@baseLinkColorHover:      darken(@baseLinkColor, 15%);
+@baseContentColor:        #333333;
+@secondContentColor:      #fff;
+
+//** Border Color
+
+@borderColor-grey:        @gray;
+@borderColor:             @baseContentColor;
+
+//** Background Color
+
+@baseBgColor:             #ffffff;
+@secondBgColor:           #e5f3f5;
+@thirdBgColor:            #eae7de;
+@fourthBgColor:           #008ca0;
+@baseBgBox:               @redColor;
+@footerBgColor:           #095c68;
+
+//*** Background Color transparent
+
+@trans-firstColor:        fade(@baseColor, 50%);
+@trans-secondColor:       fade(@redColor, 80%);
+@trans-whiteColor:		  fade(@whiteColor, 80%);
+
+
+//== Fonts
+//
+//## font-family, font-height, font-weight, font-style, body, text, headings
+
+@baseFontFace:            'Roboto', Arial, Verdana, sans-serif;
+@secondFontFace:			  'Quicksand', sans-serif;
+
+//** font-size
+
+@base-font-size:          1rem;
+@base-font-size-large:    1.125rem;
+@base-font-size-lighter:  (@base-font-size - (4 / 16));
+@headline-h1:             (@base-font-size * 3);
+@headline-h2:             (@base-font-size * 1.75);
+@headline-h3:             (@base-font-size * 1.5);
+@headline-h1-lighter:     (@base-font-size * 2);
+@headline-h2-lighter:     (@base-font-size * 1.5);
+@headline-h3-lighter:     (@base-font-size * 1.25);
+@headline-global:         3.75rem;
+@headline-global-lighter: @base-font-size;
+
+//** line-height
+
+@baseLineHeight:          (@base-font-size * 1.5);
+@baseLineHeight-large:	  (@base-font-size-large * 1.5);
+@baseLineHeight-lighter:  (@base-font-size-lighter * 1.125);
+@h1-lineHeight:           (@headline-h1 * 1.125);
+@h2-lineHeight:           (@headline-h2 * 1.25);
+@h3-lineHeight:           (@headline-h3 * 1.5);
+@global-lineHeight:       (@base-font-size * 2.5);
+@h1-lineHeight-lighter:   (@headline-h1-lighter * 1.25);
+@h2-lineHeight-lighter:   (@headline-h2-lighter * 1.25);
+@h3-lineHeight-lighter:   (@headline-h3-lighter * 1.25);
+@global-lineHeight-lighter: (@base-font-size * 1.25);
+
+
+//== Diverses
+//
+//## complete by your self
+
+//** Transition
+
+@baseTransitionDuration: 0.25s;
+@secondTransitionDuration: 0.35s;
+
+
+//** basic margin
+
+@margin:                  0.625rem;
+@margin-xxxx-large:       (@margin * 4);
+@margin-yyyy-large:       (@margin * 4);
+@margin-xxx-large:        (@margin * 2.5);
+@margin-yyy-large:        (@margin * 2.5);
+@margin-xx-large:         (@margin * 2);
+@margin-yy-large:         (@margin * 2);
+@margin-x-large:          (@margin * 1.5);
+@margin-y-large:          (@margin * 1.5);
+
+@margin-x-smaller:        (@margin * 0.5);
+@margin-y-smaller:        (@margin * 0.5);
+@margin-x-small:          (0);
+@margin-y-small:          (0);
+
+//** basic padding
+
+@padding:                 0.625rem;
+@padding-xxxx-large:      (@padding * 4);
+@padding-yyyy-large:      (@padding * 4);
+@padding-xxx-large:       (@padding * 2.5);
+@padding-yyy-large:       (@padding * 2.5);
+@padding-xx-large:        (@padding * 2);
+@padding-yy-large:        (@padding * 2);
+@padding-x-large:         (@padding * 1.5);
+@padding-y-large:         (@padding * 1.5);
+
+@padding-x-smaller:       (@padding * 0.5);
+@padding-y-smaller:       (@padding * 0.5);
+@padding-x-small:         (0);
+@padding-y-small:         (0);

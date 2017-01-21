@@ -1,0 +1,154 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container-fluid:after,
+.container-fluid:before,
+.row:after,
+.row:before,
+section:after,
+section:before {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+html {
+  border-collapse: separate;
+  overflow-x: auto;
+  overflow-y: scroll;
+  font-family: sans-serif;
+  font-size: 100%;
+  height: 100%;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  color: @gray;
+  font: 400 @base-font-size @baseFontFace;
+  line-height: @baseLineHeight;
+  text-rendering: optimizeLegibility;
+}
+
+body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, ol, ul, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, figure {
+  margin: 0;
+  padding: 0;
+}
+
+p, pre, blockquote, table, ol, ul {
+  margin-bottom: @margin-y-large;
+}
+
+section {
+  display: block;
+  overflow: hidden;
+}
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+.section-fluid {
+
+  .container-fluid {
+    padding: 0;
+    width: 100vw;
+  }
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: @baseLinkColor;
+  .transition ();
+
+  &:active,
+  &:hover {
+    outline: 0;
+    text-decoration: none;
+    color: @baseLinkColorHover;
+  }
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  outline: 0 none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// phoneLandscapeViewport
+@media all and (min-width: @phoneLandscapeViewport) and (max-width: @tabletPortraitViewport) {
+
+  .container-fluid {
+    max-width: @phoneLandscapeViewport;
+    .transition();
+  }
+
+  .section-fluid .container-fluid {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+
+// tabletPortraitViewport
+@media all and (min-width: @tabletPortraitViewport) and (max-width: @tabletLandscapeViewport) {
+  .container-fluid {
+    max-width: @tabletPortraitViewport;
+    .transition();
+  }
+
+  &.section-fluid .container-fluid {
+    padding: 0;
+    max-width: 100%;
+  }
+}
+
+// tabletLandscapeViewport
+@media all and (min-width: @tabletLandscapeViewport) and (max-width: @desktopViewport) {
+  .container-fluid {
+    max-width: @tabletLandscapeViewport;
+    .transition();
+  }
+
+  &.section-fluid .container-fluid {
+    max-width: 100%;
+  }
+}
+
+// desktopViewport
+@media all and (min-width: @desktopViewport) {
+  .container-fluid {
+    max-width: @desktopMaxWidth;
+    .transition();
+  }
+
+  &.section-fluid .container-fluid {
+    max-width: 100%;
+  }
+}

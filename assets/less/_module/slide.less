@@ -1,0 +1,247 @@
+// Viewport for gallery
+@media all and (min-width: 881px) {
+
+	.slideanim,
+	.slide-more {visibility:hidden;}
+    //
+	//.slide-more {
+    //
+	//	.slide--1 {
+	//		margin-top: -124px;
+	//	}
+	//}
+
+	// slide animation from left to right
+	.gallery__first {
+
+		.slide {
+
+			&--1,
+			&--2,
+			&--3 {
+
+		 /* The name of the animation slide left */
+		 -webkit-animation-name: slide;
+		 -moz-animation-name: slide;
+		 -ms-animation-name: slide;
+		 -o-animation-name: slide;
+		 animation-name: slide;
+
+		 /* The duration of the animation */
+		 -webkit-animation-duration: 1.5s;
+		 -moz-animation-duration: 1.5s;
+		 -ms-animation-duration: 1.5s;
+		 -o-animation-duration: 1.5s;
+		 animation-duration: 1.5s;
+
+		 /* Make the element visible */
+		 visibility: visible;
+			}
+
+
+			&--1 {
+
+		 /* The delay of the animation */
+		 -webkit-animation-animation: slide 1s;
+		 -moz-animation-animation: slide 1s;
+		 -ms-animation-animation: slide 1s;
+		 -o-animation-animation: slide 1s;
+		 animation: slide 1s;
+			}
+
+			&--2 {
+
+		 /* The delay of the animation */
+		 -webkit-animation-animation: slide 2.5s;
+		 -moz-animation-animation: slide 2.5s;
+		 -ms-animation-animation: slide 2.5s;
+		 -o-animation-animation: slide 2.5s;
+		 animation: slide 2.5s;
+			}
+
+
+				&--1,
+				&--2,
+				&--3 {
+
+				/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+				@-webkit-keyframes slide {
+
+				    0% {
+				        opacity: 0;
+				        -webkit-transform: translateX(-100%);
+				        -moz-transform: translateX(-100%);
+				        -ms-transform: translateX(-100%);
+				        -o-transform: translateX(-100%);
+				        transform: translateX(-100%);
+				    }
+				    100% {
+				        opacity: 1;
+				        -webkit-transform: translateX(0%);
+				        -moz-transform: translateX(0%);
+				        -ms-transform: translateX(0%);
+				        -o-transform: translateX(0%);
+				        transform: translateX(0%);
+				    }
+				}
+
+				@-moz-keyframes slide {
+				    0% {
+				        opacity: 0;
+				        -webkit-transform: translateX(-100%);
+				        -moz-transform: translateX(-100%);
+				        -ms-transform: translateX(-100%);
+				        -o-transform: translateX(-100%);
+				        transform: translateX(-100%);
+				    }
+				    100% {
+				        opacity: 1;
+				        -webkit-transform: translateX(0%);
+				        -moz-transform: translateX(0%);
+				        -ms-transform: translateX(0%);
+				        -o-transform: translateX(0%);
+				        transform: translateX(0%);
+				    }
+				}
+
+
+				@keyframes slide {
+				    0% {
+				        opacity: 0;
+				        -webkit-transform: translateX(-100%);
+				        -moz-transform: translateX(-100%);
+				        -ms-transform: translateX(-100%);
+				        -o-transform: translateX(-100%);
+				        transform: translateX(-100%);
+				    }
+				    100% {
+				        opacity: 1;
+				        -webkit-transform: translateX(0%);
+				        -moz-transform: translateX(0%);
+				        -ms-transform: translateX(0%);
+				        -o-transform: translateX(0%);
+				        transform: translateX(0%);
+				    }
+				}
+			}
+		}
+	}
+
+	//slide animation from right to left
+	.gallery__last {
+
+		.slide {
+
+			&--3,
+			&--4,
+			&--5,
+			&--6{
+				position: relative;
+				overflow: hidden;
+
+		 /* The name of the animation slide left */
+		 -webkit-animation-name: move;
+		 -moz-animation-name: move;
+		 -ms-animation-name: move;
+		 -o-animation-name: move;
+		 animation-name: move;
+
+		 /* The duration of the animation */
+		 -webkit-animation-duration: 1s;
+		 -moz-animation-duration: 1s;
+		 -ms-animation-duration: 1s;
+		 -o-animation-duration: 1s;
+		 animation-duration: 1s;
+
+		 /* Make the element visible */
+		 visibility: visible;
+			}
+
+			&--3 {
+
+		 /* The delay of the animation */
+		 -webkit-animation-animation: move 1.5s;
+		 -moz-animation-animation: move 1.5s;
+		 -ms-animation-animation: move 1.5s;
+		 -o-animation-animation: move 1.5s;
+		 animation: move 1.5s;
+			}
+
+			&--4 {
+
+		 /* The delay of the animation */
+		 -webkit-animation-animation: move 0.75s;
+		 -moz-animation-animation: move 0.75s;
+		 -ms-animation-animation: move 0.75s;
+		 -o-animation-animation: move 0.75s;
+		 animation: move 0.75s;
+			}
+		}
+
+			&--3,
+			&--4,
+			&--5,
+			&--6{
+
+			/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+			@-webkit-keyframes move {
+
+			    0% {
+			        opacity: 0;
+			        -webkit-transform: translateX(100%);
+			        -moz-transform: translateX(100%);
+			        -ms-transform: translateX(100%);
+			        -o-transform: translateX(100%);
+			        transform: translateX(100%);
+			    }
+			    100% {
+			        opacity: 1;
+			        -webkit-transform: translateX(0%);
+			        -moz-transform: translateX(0%);
+			        -ms-transform: translateX(0%);
+			        -o-transform: translateX(0%);
+			        transform: translateX(0%);
+			    }
+			}
+
+			@-moz-keyframes move {
+			    0% {
+			        opacity: 0;
+			        -webkit-transform: translateX(100%);
+			        -moz-transform: translateX(100%);
+			        -ms-transform: translateX(100%);
+			        -o-transform: translateX(100%);
+			        transform: translateX(100%);
+			    }
+			    100% {
+			        opacity: 1;
+			        -webkit-transform: translateX(0%);
+			        -moz-transform: translateX(0%);
+			        -ms-transform: translateX(0%);
+			        -o-transform: translateX(0%);
+			        transform: translateX(0%);
+			    }
+			}
+
+
+			@keyframes move {
+			    0% {
+			        opacity: 0;
+			        -webkit-transform: translateX(100%);
+			        -moz-transform: translateX(100%);
+			        -ms-transform: translateX(100%);
+			        -o-transform: translateX(100%);
+			        transform: translateX(100%);
+			    }
+			    100% {
+			        opacity: 1;
+			        -webkit-transform: translateX(0%);
+			        -moz-transform: translateX(0%);
+			        -ms-transform: translateX(0%);
+			        -o-transform: translateX(0%);
+			        transform: translateX(0%);
+			    }
+			}
+		}
+	}
+}

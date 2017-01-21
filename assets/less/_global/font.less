@@ -1,0 +1,142 @@
+/*
+Copyright Axel Schaffrath
+*/
+
+// Base Font
+
+ @import 'https://fonts.googleapis.com/css?family=Roboto';
+
+
+//Second Font
+
+@import 'https://fonts.googleapis.com/css?family=Quicksand';
+
+
+// Lto fg font styles
+
+@font-face {
+  font-family: "lto";
+  src:url("../fonts/lto/lto.eot");
+  src:url("../fonts/lto/lto.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/lto/lto.woff") format("woff"),
+    url("../fonts/lto/lto.ttf") format("truetype"),
+    url("../fonts/lto/lto.svg#lto") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-fg]:before {
+  font-family: "lto";
+  content: attr(data-fg);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.fg {
+  display: inline-block;
+  text-rendering: auto;
+  font-family: 'lto';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  font-strech: normal;
+  font-kerning: normal;
+  line-height: inherit;
+  font-size: inherit;
+  font-language-override: normal;
+  font-synthesis: weight style;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+  position: relative;
+
+  &:before {
+    font-weight: 400;
+  }
+
+  &.fg-book-calc:before {
+    content: "\61";
+  }
+  &.fg-book-people:before {
+    content: "\62";
+  }
+  &.fg-search:before {
+    content: "\63";
+  }
+  &.fg-social-facebook:before {
+    content: "\64";
+  }
+  &.fg-social-googleplus:before {
+    content: "\65";
+  }
+  &.fg-social-instagram:before {
+    content: "\66";
+  }
+  &.fg-social-twitter:before {
+    content: "\67";
+  }
+  &.fg-social-youtube:before {
+    content: "\68";
+  }
+  &.fg-arrow-up:before {
+    content: "\6a";
+  }
+  &.fg-arrow-down:before {
+    content: "\6b";
+  }
+  &.fg-arrow-right:before {
+    content: "\6c";
+  }
+  &.fg-arrow-left:before {
+    content: "\69";
+  }
+  &.fg-information-outline:before {
+    content: "\6d";
+  }
+  &.fg-close-outline:before {
+    content: "\6f";
+  }
+  &.fg-location-outline:before {
+    content: "\70";
+  }
+  &.fg-download-outline:before {
+    content: "\71";
+  }
+  &.fg-checkmark-empty:before {
+    content: "\72";
+  }
+  &.fg-email-outline:before {
+    content: "\73";
+  }
+  &.fg-navicon:before {
+    content: "\6e";
+  }
+  &.fg-blockquote:before {
+    content: "\74";
+  }
+  &.fg-dot:before {
+    content: "\75";
+  }
+  &.fg-map:before {
+    content: "\76";
+  }
+  &.fg-media:before {
+    content: "\77";
+  }
+  &.fg-weather:before {
+    content: "\78";
+  }
+  &.fg-web-cam:before {
+    content: "\79";
+  }
+}

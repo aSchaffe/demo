@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="" lang="de">
+<head>
+    <title>Eine responsive Bildergalerie</title>
+    <meta charset="UTF-8">
+    <meta content="index,follow" name="robots">
+    <meta content="Dies wird eine wunderschöne Bildergalerie mit einigen netten Features" name="description">
+    <meta content="Bild, Küche, Designer, Hamburg, Bad Segeberg" name="keywords">
+    <meta content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"
+          name="viewport">
+    <link type="text/css" href="assets/css/styles.css" rel="stylesheet">
+    <link type="text/css" href="assets/css/lightbox.css" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</head>
+<body class="nav-sticky">
+<nav id="mainnav" class="topnav">
+    <ul>
+        <li class="nav-item sibling">
+            <a href="#content" title="Kleines Mittagsmenü" class="li-item" role="menuitem">Kleines Mittagsmenü</a>
+
+            <ul>
+                <li class="nav-item">
+                    <a href="#" title="Test" class="li-item" role="menuitem">Paar Abendmenü</a>
+                </li>
+                <li class="nav-item">
+                    <a href="http://dev.axel-schaffrath.de" title="Test" class="li-item" role="menuitem">Punkt 2</a>
+                </li>
+                <li class="nav-item">
+                    <a href="http://dev.axel-schaffrath.de" title="Test" class="li-item" role="menuitem">Punkt 3</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item sibling">
+            <a href="#" title="Paar Abendmenü" class="li-item" role="menuitem">Paar Abendmenü</a>
+
+            <ul>
+                <li class="nav-item">
+                    <a href="http://dev.axel-schaffrath.de" title="Test" class="li-item" role="menuitem">Punkt 1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="http://dev.axel-schaffrath.de" title="Test" class="li-item" role="menuitem">Punkt 2</a>
+                </li>
+                <li class="nav-item">
+                    <a href="http://dev.axel-schaffrath.de" title="Test" class="li-item" role="menuitem">Punkt 3</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="#" title="Familien Brunch" class="li-item" role="menuitem">Familien Brunch</a>
+        </li>
+    </ul>
+</nav>
+<section id="headline">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="grid lg-1 md-1 sm-1 xs-1 xxs-1 text-center head">
+                <h1 class="head__headline head__headline--red">
+                    Sterneküche mit Pfiff
+                </h1>
+                <h2 class="head__subline">
+                    Mit Leidenschaft zubereitet
+                </h2>
+                <p class="head__copy">
+                    Kreativität ist in einer guten Küche mit Blick auf Morgen unverzichtbar. Fehlt die Begeisterung an
+                    den Zutaten, gehört man schnell zu Gestern oder man erhält Ergebnisse nach "Hausfrauen Art".
+                    Für mich ist die Web-Entwicklung wie das Kochen. Das kreieren neuer Rezepte ist meine Leidenschaft.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="content">
+    <div class="container-fluid gallery">
+        <div class="row">
+            <div class="grid lg-2 md-2 sm-1 gallery__first slideanim">
+                <figure class="">
+                    <img src="files/img/small/hand-dinner.jpg" alt="Hand beim Essen"
+                         title="Hand beim Essen" width="620" height="440">
+                </figure>
+                <figure class="" >
+                    <img src="files/img/small/pizza.jpg" alt="Pizza"
+                         title="Pizza" width="490" height="140">
+                </figure>
+            </div>
+            <div class="grid lg-2 md-2 sm-1 gallery__last slideanim">
+                <div class="gallery__copy">
+                    <figure >
+                        <img src="files/img/large/nudel-parmesan.jpg" alt="Tagliatelle mit Parmesan"
+                             title="Tagliatelle mit Parmesan" width="620"
+                             height="600">
+                        </a>
+                    </figure>
+                    <div class="gallery__copy-text">
+                        <div class="gallery__copy-text-inner">
+                            <div class="gallery__copy-text-center">
+                                <p class="gallery__copy-headline">
+                                    <span class="gallery__copy-headline--red">Rezept:</span><br>
+                                    Gallery Flip
+                                </p>
+                                <p class="gallery__copy-bold">
+                                    Blindtext weit hinten, hinter den Wortbergen, fern der Länder Volkalien und
+                                    Konsonatien.
+                                </p>
+                                <p>
+                                    Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen
+                                    Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt
+                                    sie mit den nötigen Regelialien.
+                                </p>
+                                <a href="files/img/large/nudel-parmesan.jpg" data-lightbox="gallery"
+                                   data-title="" title=""
+                                   class="button button--red">Mehr erfahren</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <figure class="">
+                    <a href="files/img/large/braten-brokkoli.jpg" data-lightbox="gallery"
+                       data-title="">
+                        <img src="files/img/small/braten-brokkoli.jpg" alt="Braten mit Brokkoli"
+                             title="Braten mit Brokkoli" width="555"
+                             height="405">
+                    </a>
+                </figure>
+            </div>
+            <div class="button__container">
+                <button type="button" value="Mehr erfahren"
+                        class="button button--red">Mehr anzeigen
+                </button>
+            </div>
+            <div class="grid lg-2 md-2 sm-1 gallery__first slide-more">
+                <figure class="">
+                    <img data-src="files/img/small/tresen.jpg"
+                         alt="Restaurant Tresen" title="Restaurant Tresen" width="620"
+                         height="340">
+                </figure>
+                <figure class="">
+                    <img data-src="files/img/small/koch.jpg"
+                         alt="Koche in Küche" title="Koche in Küche"
+                         width="490" height="327">
+                </figure>
+                <figure class="">
+                    <img data-src="files/img/small/erdbeere-milch.jpg"
+                         alt="Erdebeere in Milch" title="Erdebeere in Milch" width="555"
+                         height="612">
+                </figure>
+            </div>
+            <div class="grid lg-2 md-2 sm-1 gallery__last slide-more">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<script src="assets/js/vendor/lightbox.js"></script>
+</body>
+</html>

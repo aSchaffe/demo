@@ -1,0 +1,1261 @@
+.mod_article,
+.footer-inside {
+  .inside {
+    .row {
+      margin-left: -0.8065%;
+      margin-right: -0.8065%;
+
+      &:before,
+      &:after {
+        content: '';
+        display: table;
+      }
+
+      .offset-pull {
+        margin: -0.8065%;
+        overflow: hidden;
+        height: 100%;
+      }
+    }
+  }
+}
+
+* [class*="grid"] {
+  position: relative;
+
+  &:first-child {
+
+    clear: both;
+  }
+}
+
+.section-fluid {
+
+  .row {
+    margin: 0;
+
+    &.grid-full {
+
+      .inside {
+        margin: 0 auto;
+        position: relative;
+        max-width: 77.5rem;
+      }
+    }
+  }
+}
+
+// phonePortraitViewport
+@media all and (max-width: @phoneLandscapeViewport) {
+
+  .offset-push {
+    margin-left: 1.613%;
+    margin-right: 1.613%;
+  }
+
+  * [class*="grid"] {
+    min-height: 1px;
+    overflow: hidden;
+    margin: 0.9375rem 0.8065%;
+    .transition();
+
+    &.push {
+      padding-left: @padding-xx-large;
+      padding-right: @padding-xx-large;
+    }
+
+    &.xxs-2,
+    &.xxs-3,
+    &.xxs-4,
+    &.xxs-5,
+    &.xxs-6,
+    &.xxs-7,
+    &.xxs-8,
+    &.xxs-9,
+    &.xxs-10,
+    &.xxs-11,
+    &.xxs-12,
+    &.xxs-1-12,
+    &.xxs-2-12,
+    &.xxs-3-12,
+    &.xxs-4-12,
+    &.xxs-5-12,
+    &.xxs-6-12,
+    &.xxs-7-12,
+    &.xxs-8-12,
+    &.xxs-9-12,
+    &.xxs-10-12,
+    &.xxs-11-12 {
+      float: left;
+      display: inline-block;
+
+      &.clearfix {
+        clear: both;
+      }
+    }
+
+    &.xxs-1 {
+      float: none;
+      clear: both;
+    }
+
+    &.xxs-2 {
+      width: 48.3870%;
+    }
+
+    &.xxs-3 {
+      width: 31.7203%;
+    }
+
+    &.xxs-4 {
+      width: 23.3870%;
+    }
+
+    &.xxs-5 {
+      width: 18.3870%;
+    }
+
+    &.xxs-6 {
+      width: 15.0536%;
+    }
+
+    &.xxs-7 {
+      width: 12.6727%;
+    }
+
+    &.xxs-8 {
+      width: 10.8870%;
+    }
+
+    &.xxs-9 {
+      width: 9.4981%;
+    }
+
+    &.xxs-10 {
+      width: 8.3870%;
+    }
+
+    &.xxs-11 {
+      width: 7.4779%;
+    }
+
+    &.xxs-12 {
+      width: 6.7203%;
+    }
+
+    &.xxs-1-12 {
+      width: 6.7203%;
+    }
+
+    &.xxs-2-12 {
+      width: 15.0536%;
+    }
+
+    &.xxs-3-12 {
+      width: 23.3870%;
+    }
+
+    &.xxs-4-12 {
+      width: 31.7203%;
+    }
+
+    &.xxs-5-12 {
+      width: 40.0536%;
+    }
+
+    &.xxs-6-12 {
+      width: 48.3870%;
+    }
+
+    &.xxs-7-12 {
+      width: 56.7204%;
+    }
+
+    &.xxs-8-12 {
+      width: 65.0537%;
+    }
+
+    &.xxs-9-12 {
+      width: 73.3870%;
+    }
+
+    &.xxs-10-12 {
+      width: 81.7197%;
+    }
+
+    &.xxs-11-12 {
+      width: 90.0537%;
+    }
+
+    /*Column ordering
+    */
+    //push
+    &.xxs-push-2 {
+      left: 50%;
+    }
+
+    &.xxs-push-3 {
+      left: 33.3333%;
+    }
+
+    &.xxs-push-4 {
+      left: 25%;
+    }
+
+    //pull
+    &.xxs-pull-2 {
+      right: 50%;
+    }
+
+    &.xxs-pull-3 {
+      right: 33.3333%;
+    }
+
+    &.xxs-pull-4 {
+      right: 25%;
+    }
+
+    //Offsetting columns
+    &.xxs-offset-2 {
+      margin-left: 50%;
+    }
+
+    &.xxs-offset-3 {
+      margin-left: 33.3333%;
+    }
+
+    &.xxs-offset-4 {
+      margin-left: 25%;
+    }
+
+    //margin + padding top/bottom pull + push
+    &.grid-pull-top {
+      margin-top: 0 !important;
+    }
+
+    &.grid-pull-bottom {
+      margin-bottom: 0 !important;
+    }
+
+    &.grid-push-top {
+      margin-top: @margin !important;
+      padding-top: @padding-yy-large !important;
+    }
+
+    &.grid-push-bottom {
+      margin-bottom: @margin !important;
+      padding-bottom: @padding-y-large !important;
+    }
+
+    //align
+    &.xxs-align {
+      text-align: center;
+    }
+  }
+
+  .section-fluid {
+
+    &.grid-full {
+      margin: @margin-y-large 0;
+      padding: @padding-y-large 0;
+
+      .inside {
+
+        .row {
+          margin-left: 0;
+          margin-right: 0;
+
+          .grid {
+
+            &.xxs-1 {
+              margin-left: 0;
+              margin-right: 0;
+              float: none;
+
+              > * {
+                padding-left: 0.625rem;
+                padding-right: 0.625rem;
+
+                &.full-screen {
+                  padding-left: 0;
+                  padding-right: 0;
+                }
+              }
+            }
+
+            &.xxs-2,
+            &.xxs-3,
+            &.xxs-4,
+            &.xxs-5,
+            &.xxs-6,
+            &.xxs-7,
+            &.xxs-8,
+            &.xxs-9,
+            &.xxs-10,
+            &.xxs-11,
+            &.xxs-12,
+            &.xxs-1-12,
+            &.xxs-2-12,
+            &.xxs-3-12,
+            &.xxs-4-12,
+            &.xxs-5-12,
+            &.xxs-6-12,
+            &.xxs-7-12,
+            &.xxs-8-12,
+            &.xxs-9-12,
+            &.xxs-10-12,
+            &.xxs-11-12 {
+              margin: 0.8065%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// phoneLandscapeViewport
+@media all and (min-width: @phoneLandscapeViewport) and (max-width: @tabletPortraitViewport) {
+
+  .offset-push {
+    margin-left: 1.613%;
+    margin-right: 1.613%;
+  }
+
+  * [class*="grid"] {
+    min-height: 1px;
+    overflow: hidden;
+    margin: 0.625rem 0.8065%;
+    .transition();
+
+    &.push {
+      padding-left: @padding-xx-large;
+      padding-right: @padding-xx-large;
+    }
+
+    &.xs-2,
+    &.xs-3,
+    &.xs-4,
+    &.xs-5,
+    &.xs-6,
+    &.xs-7,
+    &.xs-8,
+    &.xs-9,
+    &.xs-10,
+    &.xs-11,
+    &.xs-12,
+    &.xs-1-12,
+    &.xs-2-12,
+    &.xs-3-12,
+    &.xs-4-12,
+    &.xs-5-12,
+    &.xs-6-12,
+    &.xs-7-12,
+    &.xs-8-12,
+    &.xs-9-12,
+    &.xs-10-12,
+    &.xs-11-12 {
+      float: left;
+      display: inline-block;
+
+      &.clearfix {
+        clear: both;
+      }
+    }
+
+    &.xs-1 {
+      float: none;
+      clear: both;
+    }
+
+    &.xs-2 {
+      width: 48.3870%;
+    }
+
+    &.xs-3 {
+      width: 31.7203%;
+    }
+
+    &.xs-4 {
+      width: 23.3870%;
+    }
+
+    &.xs-5 {
+      width: 18.3870%;
+    }
+
+    &.xs-6 {
+      width: 15.0536%;
+    }
+
+    &.xs-7 {
+      width: 12.6727%;
+    }
+
+    &.xs-8 {
+      width: 10.8870%;
+    }
+
+    &.xs-9 {
+      width: 9.4981%;
+    }
+
+    &.xs-10 {
+      width: 8.3870%;
+    }
+
+    &.xs-11 {
+      width: 7.4779%;
+    }
+
+    &.xs-12 {
+      width: 6.7203%;
+    }
+
+    &.xs-1-12 {
+      width: 6.7203%;
+    }
+
+    &.xs-2-12 {
+      width: 15.0536%;
+    }
+
+    &.xs-3-12 {
+      width: 23.3870%;
+    }
+
+    &.xs-4-12 {
+      width: 31.7203%;
+    }
+
+    &.xs-5-12 {
+      width: 40.0536%;
+    }
+
+    &.xs-6-12 {
+      width: 48.3870%;
+    }
+
+    &.xs-7-12 {
+      width: 56.7204%;
+    }
+
+    &.xs-8-12 {
+      width: 65.0537%;
+    }
+
+    &.xs-9-12 {
+      width: 73.3870%;
+    }
+
+    &.xs-10-12 {
+      width: 81.7197%;
+    }
+
+    &.xs-11-12 {
+      width: 90.0537%;
+    }
+
+    /*Column ordering
+    */
+    //push
+    &.xs-push-2 {
+      left: 50%;
+    }
+
+    &.xs-push-3 {
+      left: 33.3333%;
+    }
+
+    &.xs-push-4 {
+      left: 25%;
+    }
+
+    //pull
+    &.xs-pull-2 {
+      right: 50%;
+    }
+
+    &.xs-pull-3 {
+      right: 33.3333%;
+    }
+
+    &.xs-pull-4 {
+      right: 25%;
+    }
+
+    //Offsetting columns
+    &.xs-offset-2 {
+      margin-left: 50%;
+    }
+
+    &.xs-offset-3 {
+      margin-left: 33.3333%;
+    }
+
+    &.xs-offset-4 {
+      margin-left: 25%;
+    }
+
+    //margin + padding top/bottom pull + push
+    &.grid-pull-top {
+      margin-top: 0 !important;
+    }
+
+    &.grid-pull-bottom {
+      margin-bottom: 0 !important;
+    }
+
+    &.grid-push-top {
+      margin-top: @margin !important;
+      padding-top: @padding-yy-large !important;
+    }
+
+    &.grid-push-bottom {
+      margin-bottom: @margin !important;
+      padding-bottom: @padding-y-large !important;
+    }
+
+    //align
+    &.xs-align {
+      text-align: center;
+    }
+  }
+
+  .section-fluid {
+
+    &.grid-full {
+      padding: @padding-y-large 0;
+      margin: @margin-y-large 0;
+
+      .inside {
+        padding: 0 0.625rem;
+      }
+    }
+  }
+}
+
+// tabletPortraitViewport
+@media all and (min-width: @tabletPortraitViewport) and (max-width: @tabletLandscapeViewport) {
+
+  .offset-push {
+    margin-left: 1.613%;
+    margin-right: 1.613%;
+  }
+
+  * [class*="grid"] {
+    min-height: 1px;
+    overflow: hidden;
+    margin: 0.625rem 0.8065%;
+    .transition();
+
+    &.push {
+      padding-left: @padding-xxx-large;
+      padding-right: @padding-xxx-large;
+    }
+
+    &.sm-2,
+    &.sm-3,
+    &.sm-4,
+    &.sm-5,
+    &.sm-6,
+    &.sm-7,
+    &.sm-8,
+    &.sm-9,
+    &.sm-10,
+    &.sm-11,
+    &.sm-12,
+    &.sm-1-12,
+    &.sm-2-12,
+    &.sm-3-12,
+    &.sm-4-12,
+    &.sm-5-12,
+    &.sm-6-12,
+    &.sm-7-12,
+    &.sm-8-12,
+    &.sm-9-12,
+    &.sm-10-12,
+    &.sm-11-12 {
+      float: left;
+      display: inline-block;
+
+      &.clearfix {
+        clear: both;
+      }
+    }
+
+    &.sm-1 {
+      float: none;
+      clear: both;
+    }
+
+    &.sm-2 {
+      width: 48.3870%;
+    }
+
+    &.sm-3 {
+      width: 31.7203%;
+    }
+
+    &.sm-4 {
+      width: 23.3870%;
+    }
+
+    &.sm-5 {
+      width: 18.3870%;
+    }
+
+    &.sm-6 {
+      width: 15.0536%;
+    }
+
+    &.sm-7 {
+      width: 12.6727%;
+    }
+
+    &.sm-8 {
+      width: 10.8870%;
+    }
+
+    &.sm-9 {
+      width: 9.4981%;
+    }
+
+    &.sm-10 {
+      width: 8.3870%;
+    }
+
+    &.sm-11 {
+      width: 7.4779%;
+    }
+
+    &.sm-12 {
+      width: 6.7203%;
+    }
+
+    &.sm-1-12 {
+      width: 6.7203%;
+    }
+
+    &.sm-2-12 {
+      width: 15.0536%;
+    }
+
+    &.sm-3-12 {
+      width: 23.3870%;
+    }
+
+    &.sm-4-12 {
+      width: 31.7203%;
+    }
+
+    &.sm-5-12 {
+      width: 40.0536%;
+    }
+
+    &.sm-6-12 {
+      width: 48.3870%;
+    }
+
+    &.sm-7-12 {
+      width: 56.7204%;
+    }
+
+    &.sm-8-12 {
+      width: 65.0537%;
+    }
+
+    &.sm-9-12 {
+      width: 73.3870%;
+    }
+
+    &.sm-10-12 {
+      width: 81.7197%;
+    }
+
+    &.sm-11-12 {
+      width: 90.0537%;
+    }
+
+    /*Column ordering
+    */
+    //push
+    &.sm-push-2 {
+      left: 50%;
+    }
+
+    &.sm-push-3 {
+      left: 33.3333%;
+    }
+
+    &.sm-push-4 {
+      left: 25%;
+    }
+
+    &.sm-push-9-12 {
+      left: 75%;
+    }
+
+    //pull
+    &.sm-pull-2 {
+      right: 50%;
+    }
+
+    &.sm-pull-3 {
+      right: 33.3333%;
+    }
+
+    &.sm-pull-4 {
+      right: 25%;
+    }
+
+    &.sm-pull-3-12 {
+      right: 25%;
+    }
+
+    &.sm-pull-8-12 {
+      right: 33.3333%
+    }
+
+    &.sm-pull-9-12 {
+      right: 75%;
+    }
+
+    //Offsetting columns
+    &.sm-offset-2 {
+      margin-left: 50%;
+    }
+
+    &.sm-offset-3 {
+      margin-left: 33.3333%;
+    }
+
+    &.sm-offset-4 {
+      margin-left: 25%;
+    }
+
+    //margin + padding top/bottom pull + push
+    &.grid-pull-top {
+      margin-top: 0 !important;
+    }
+
+    &.grid-pull-bottom {
+      margin-bottom: 0 !important;
+    }
+
+    &.grid-push-top {
+      margin-top: @margin-y-large !important;
+      padding-top: @padding-y-large !important;
+    }
+
+    &.grid-push-bottom {
+      margin-bottom: @margin !important;
+      padding-bottom: @padding-y-large !important;
+    }
+
+    //align
+    &.sm-align {
+      text-align: center;
+    }
+  }
+
+  .section-fluid {
+
+    &.grid-full {
+      margin: @margin-y-large 0;
+      padding: @padding-y-large 0;
+
+      .inside {
+        padding: 0 0.9375rem;
+      }
+    }
+  }
+}
+
+// tabletLandscapeViewport
+@media all and (min-width: @tabletLandscapeViewport) and (max-width: @desktopViewport) {
+
+  .offset-push {
+    margin-left: 1.613%;
+    margin-right: 1.613%;
+  }
+
+  * [class*="grid"] {
+    min-height: 1px;
+    overflow: hidden;
+    margin: 0.625rem 0.8065%;
+    .transition();
+
+    &.push {
+      padding-left: @padding-xxxx-large + @padding-xxx-large;
+      padding-right: @padding-xxxx-large + @padding-xxx-large;
+    }
+
+    &.md-2,
+    &.md-3,
+    &.md-4,
+    &.md-5,
+    &.md-6,
+    &.md-7,
+    &.md-8,
+    &.md-9,
+    &.md-10,
+    &.md-11,
+    &.md-12,
+    &.md-1-12,
+    &.md-2-12,
+    &.md-3-12,
+    &.md-4-12,
+    &.md-5-12,
+    &.md-6-12,
+    &.md-7-12,
+    &.md-8-12,
+    &.md-9-12,
+    &.md-10-12,
+    &.md-11-12 {
+      float: left;
+      display: inline-block;
+
+      &.clearfix {
+        clear: both;
+      }
+    }
+
+    &.md-1 {
+      float: none;
+      clear: both;
+    }
+
+    &.md-2 {
+      width: 48.3870%;
+    }
+
+    &.md-3 {
+      width: 31.7203%;
+    }
+
+    &.md-4 {
+      width: 23.3870%;
+    }
+
+    &.md-5 {
+      width: 18.3870%;
+    }
+
+    &.md-6 {
+      width: 15.0536%;
+    }
+
+    &.md-7 {
+      width: 12.6727%;
+    }
+
+    &.md-8 {
+      width: 10.8870%;
+    }
+
+    &.md-9 {
+      width: 9.4981%;
+    }
+
+    &.md-10 {
+      width: 8.3870%;
+    }
+
+    &.md-11 {
+      width: 7.4779%;
+    }
+
+    &.md-12 {
+      width: 6.7203%;
+    }
+
+    &.md-1-12 {
+      width: 6.7203%;
+    }
+
+    &.md-2-12 {
+      width: 15.0536%;
+    }
+
+    &.md-3-12 {
+      width: 23.3870%;
+    }
+
+    &.md-4-12 {
+      width: 31.7203%;
+    }
+
+    &.md-5-12 {
+      width: 40.0536%;
+    }
+
+    &.md-6-12 {
+      width: 48.3870%;
+    }
+
+    &.md-7-12 {
+      width: 56.7204%;
+    }
+
+    &.md-8-12 {
+      width: 65.0537%;
+    }
+
+    &.md-9-12 {
+      width: 73.3870%;
+    }
+
+    &.md-10-12 {
+      width: 81.7197%;
+    }
+
+    &.md-11-12 {
+      width: 90.0537%;
+    }
+
+    /*Column ordering
+    */
+    //push
+    &.md-push-2 {
+      left: 50%;
+    }
+
+    &.md-push-3 {
+      left: 33.3333%;
+    }
+
+    &.md-push-4 {
+      left: 25%;
+    }
+
+    &.md-push-4-12 {
+      left: 66.6666%
+    }
+
+    &.md-push-9-12 {
+      left: 75%;
+    }
+
+    //pull
+    &.md-pull-2 {
+      right: 50%;
+    }
+
+    &.md-pull-3 {
+      right: 33.3333%;
+    }
+
+    &.md-pull-4 {
+      right: 25%;
+    }
+
+    &.md-pull-3-12 {
+      right: 25%;
+    }
+
+    &.md-pull-8-12 {
+      right: 33.3333%
+    }
+
+    &.md-pull-9-12 {
+      right: 75%;
+    }
+
+    //Offsetting columns
+    &.md-offset-2 {
+      margin-left: 50%;
+    }
+
+    &.md-offset-3 {
+      margin-left: 33.3333%;
+    }
+
+    &.md-offset-4 {
+      margin-left: 25%;
+    }
+
+    //margin + padding top/bottom pull + push
+    &.grid-pull-top {
+      margin-top: 0 !important;
+    }
+
+    &.grid-pull-bottom {
+      margin-bottom: 0 !important;
+    }
+
+    &.grid-push-top {
+      margin-top: @margin-yyy-large !important;
+      padding-top: @padding-yy-large !important;
+    }
+
+    &.grid-push-bottom {
+      margin-bottom: 2.5rem !important;
+      padding-bottom: 2.5rem !important;
+    }
+
+    //align
+    &.md-align {
+      text-align: center;
+    }
+  }
+
+  .section-fluid {
+
+    &.grid-full {
+      margin: @margin-y-large 0;
+      padding: @padding-y-large 0;
+
+      .inside {
+        padding: 0 0.9375rem;
+      }
+    }
+  }
+}
+
+// desktopViewport
+@media all and (min-width: @desktopViewport) {
+
+  .offset-push {
+    margin-left: 1.613%;
+    margin-right: 1.613%;
+  }
+
+  .section-fluid {
+
+    &.grid-full {
+
+      .inside {
+        padding: 0;
+      }
+    }
+  }
+
+  * [class*="grid"] {
+    min-height: 1px;
+    overflow: hidden;
+    margin: 0.625rem 0.8065%;
+    .transition();
+
+    &.push {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &.lg-2,
+    &.lg-3,
+    &.lg-4,
+    &.lg-5,
+    &.lg-6,
+    &.lg-7,
+    &.lg-8,
+    &.lg-9,
+    &.lg-10,
+    &.lg-11,
+    &.lg-12,
+    &.lg-1-12,
+    &.lg-2-12,
+    &.lg-3-12,
+    &.lg-4-12,
+    &.lg-5-12,
+    &.lg-6-12,
+    &.lg-7-12,
+    &.lg-8-12,
+    &.lg-9-12,
+    &.lg-10-12,
+    &.lg-11-12 {
+      float: left;
+      display: inline-block;
+
+      &.clearfix {
+        clear: both;
+      }
+    }
+
+    &.lg-1 {
+      float: none;
+      clear: both;
+    }
+
+    &.lg-2 {
+      width: 48.3870%;
+    }
+
+    &.lg-3 {
+      width: 31.7203%;
+    }
+
+    &.lg-4 {
+      width: 23.3870%;
+    }
+
+    &.lg-5 {
+      width: 18.3870%;
+    }
+
+    &.lg-6 {
+      width: 15.0536%;
+    }
+
+    &.lg-7 {
+      width: 12.6727%;
+    }
+
+    &.lg-8 {
+      width: 10.8870%;
+    }
+
+    &.lg-9 {
+      width: 9.4981%;
+    }
+
+    &.lg-10 {
+      width: 8.3870%;
+    }
+
+    &.lg-11 {
+      width: 7.4779%;
+    }
+
+    &.lg-12 {
+      width: 6.7203%;
+    }
+
+    &.lg-1-12 {
+      width: 6.7203%;
+    }
+
+    &.lg-2-12 {
+      width: 15.0536%;
+    }
+
+    &.lg-3-12 {
+      width: 23.3870%;
+    }
+
+    &.lg-4-12 {
+      width: 31.7203%;
+    }
+
+    &.lg-5-12 {
+      width: 40.0536%;
+    }
+
+    &.lg-6-12 {
+      width: 48.3870%;
+    }
+
+    &.lg-7-12 {
+      width: 56.7204%;
+    }
+
+    &.lg-8-12 {
+      width: 65.0537%;
+    }
+
+    &.lg-9-12 {
+      width: 73.3870%;
+    }
+
+    &.lg-10-12 {
+      width: 81.7197%;
+    }
+
+    &.lg-11-12 {
+      width: 90.0537%;
+    }
+
+    /*Column ordering
+    */
+    //push
+    &.lg-push-2 {
+      left: 50%;
+    }
+
+    &.lg-push-3 {
+      left: 33.3333%;
+    }
+
+    &.lg-push-4 {
+      left: 25%;
+    }
+
+    &.lg-push-4-12 {
+      left: 66.6666%
+    }
+
+    &.lg-push-9-12 {
+      left: 75%;
+    }
+
+    //pull
+    &.lg-pull-2 {
+      right: 50%;
+    }
+
+    &.lg-pull-3 {
+      right: 33.3333%;
+    }
+
+    &.lg-pull-4 {
+      right: 25%;
+    }
+
+    &.lg-pull-3-12 {
+      right: 25%;
+    }
+
+    &.lg-pull-8-12 {
+      right: 33.3333%
+    }
+
+    &.lg-pull-9-12 {
+      right: 75%;
+    }
+
+    //Offsetting columns
+    &.lg-offset-2 {
+      margin-left: 50%;
+    }
+
+    &.lg-offset-3 {
+      margin-left: 33.3333%;
+    }
+
+    &.lg-offset-4 {
+      margin-left: 25%;
+    }
+
+    //margin + padding top/bottom pull + push
+    &.grid-pull-top {
+      margin-top: 0 !important;
+    }
+
+    &.grid-pull-bottom {
+      margin-bottom: 0 !important;
+    }
+
+    &.grid-push-top {
+      margin-top: @margin-yyy-large !important;
+      padding-top: @padding-yyy-large !important;
+    }
+
+    &.grid-push-bottom {
+      margin-bottom: 2.5rem !important;
+      padding-bottom: 2.5rem !important;
+    }
+
+    //align
+    &.lg-align {
+      text-align: center;
+    }
+  }
+
+  .section-fluid {
+
+    &.grid-full {
+      margin: @margin-yyyy-large 0;
+      padding: @padding-yyyy-large 0;
+    }
+  }
+}
