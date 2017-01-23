@@ -1876,6 +1876,10 @@ nav ul li a {
   text-transform: uppercase;
   display: block;
 }
+nav ul li a:hover,
+nav ul li a.nav-active {
+  color: #ae1130;
+}
 nav ul li ul {
   clear: left;
   display: block;

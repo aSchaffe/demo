@@ -154,7 +154,8 @@ $(document).ready(function () {
     var navElements = {
         ul: $(nav).find('ul li ul'),
         item: '.nav-item',
-        link: 'li > a'
+        link: 'li > a',
+        active: 'nav-active'
     };
 
     $(nav).find('ul').eq(0).css({
@@ -172,9 +173,11 @@ $(document).ready(function () {
     });
 
     $('#mainnav ul li a[href^="#"]').on('click', function (event) {
+        $('#mainnav ul li a').removeClass('nav-active');
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top - $(nav).height()
         }, 'swing');
+        $(this).addClass('nav-active');
         event.preventDefault();
     });
 
