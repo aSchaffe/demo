@@ -11,7 +11,6 @@ $(document).ready(function () {
         });
     }
 
-
     $(buttonMore).hide();
     if ($(window).width() < 480) {
         $('#content').hide();
@@ -108,7 +107,6 @@ $(document).ready(function () {
     }
 
     $(window).on('scroll', getItem('<p>Weitere Bilder werden mit der Methode <strong>$.get()</strong> sowie <strong>$.getJSON()</strong> beim Click des Buttons geladen.</p>'));
-
 
     // Set margin top slide
     if ($(window).width() > 768) {
@@ -223,5 +221,4 @@ $(document).ready(function () {
             $('#content, #mainnav').fadeIn('2000');
         }
     });
-
 });
