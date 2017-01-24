@@ -207,12 +207,6 @@ $(document).ready(function () {
         }, 200);
     }
 
-    if (!$(event.target).hasClass('div.modal-container.is-active')) {
-        $(window).on('click', function () {
-            slidemodalBox();
-        });
-    }
-
     $(modalBox.close).on('click', function (e) {
         e.stopPropagation();
         slidemodalBox();
@@ -222,6 +216,12 @@ $(document).ready(function () {
     });
 
     $(modalBox.open).on('click', function (event) {
+
+        if (!$(event.target).hasClass('div.modal-container.is-active')) {
+            $(window).on('click', function () {
+                slidemodalBox();
+            });
+        }
         event.stopPropagation();
         event.preventDefault();
         // $('html, body').find(modalBox.layer).fadeOut().removeClass('is-active');
