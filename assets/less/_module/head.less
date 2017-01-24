@@ -1,27 +1,29 @@
 .head {
-	margin-top: (@margin * 5);
-	margin-bottom: (@margin * 3);
+  margin-top: (@margin * 5);
+  margin-bottom: (@margin * 3);
 
-	&__headline,
-	&__subline {
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 300;
-		font-size: @headline-h1-lighter;
-		line-height: @h1-lineHeight-lighter;
-		font-family: @secondFontFace;
-	}
+  &__headline,
+  &__subline {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-size: @headline-h1-lighter;
+    line-height: @h1-lineHeight-lighter;
+    font-family: @secondFontFace;
+  }
 
-	&__subline {
-		margin-bottom: 0.75rem;
-	}
+  &__subline {
+    margin-bottom: 0.75rem;
+  }
 
-	&__headline--red {color: @redColor;}
+  &__headline--red {
+    color: @redColor;
+  }
 
-	&__copy {
-		padding-left: @padding * 3;
-		padding-right: @padding * 3;
-	}
+  &__copy {
+    padding-left: @padding * 3;
+    padding-right: @padding * 3;
+  }
 }
 
 // phoneLandscapeViewport
@@ -31,39 +33,39 @@
 
 // tabletPortraitViewport
 @media all and (min-width: @tabletPortraitViewport) {
-	.head {
+  .head {
 
-		&__headline,
-		&__subline {
-			font-size: @headline-h1;
-			line-height: @h1-lineHeight;
-		}
+    &__headline,
+    &__subline {
+      font-size: @headline-h1;
+      line-height: @h1-lineHeight;
+    }
 
-		&__copy {
-			padding-left: @padding * 10;
-			padding-right: @padding * 10;
-		}
-	}
+    &__copy {
+      padding-left: @padding * 10;
+      padding-right: @padding * 10;
+    }
+  }
 }
 
 // tabletLandscapeViewport
 @media all and (min-width: @tabletLandscapeViewport) {
-	.head {
+  .head {
 
-		&__copy {
-			padding-left: @padding * 15;
-			padding-right: @padding * 15;
-		}
-	}
+    &__copy {
+      padding-left: @padding * 15;
+      padding-right: @padding * 15;
+    }
+  }
 }
 
 // desktopViewport
 @media all and (min-width: @desktopViewport) {
-	.head {
+  .head {
 
-		&__copy {
-			padding-left: @padding * 20;
-			padding-right: @padding * 20;
-		}
-	}
+    &__copy {
+      padding-left: @padding * 20;
+      padding-right: @padding * 20;
+    }
+  }
 }

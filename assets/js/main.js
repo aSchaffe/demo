@@ -16,6 +16,9 @@ $(document).ready(function () {
         $('#content').hide();
     } else {
         $(window).scroll(function () {
+            setTimeout(function () {
+                $('div.bounce').remove();
+            }, 500);
             $(slider).each(function () {
                 var pos = $(this).offset().top;
                 var winTop = $(window).scrollTop();

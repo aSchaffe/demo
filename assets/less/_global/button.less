@@ -1,50 +1,48 @@
-.button {display: none;}
+.button {
+  display: none;
+}
 
 // Viewport for gallery
 @media all and (min-width: 881px) {
-	.button {
-		display: block;
+  .button {
+    outline: 0 none;
+    display: inline-block;
+    font-size: @base-font-size;
+    line-height: 2.8125;
+    padding-right: (@padding * 3);
+    padding-left: (@padding * 3);
+    margin-top: @margin;
+    border: 2px solid @redColor;
 
-		border: 0 none;
-		outline: 0 none;
-		display: inline-block;
-		font-size: @base-font-size;
-		line-height: 2.8125;
-		padding-right: (@padding * 3);
-		padding-left: (@padding * 3);
-		margin-top: @margin;
-		border: 2px solid @redColor;
-		.border-radius (@radius: 0 0 0.625rem 0 );
+    &--red {
+      position: relative;
+      z-index: 101;
 
-		&--red {
-			position: relative;
-			z-index: 101;
+      &:hover {
+        text-decoration: none;
+        background-color: @redColor;
+        color: @whiteColor;
+      }
+    }
 
-			&:hover {
-				text-decoration: none;
-				background-color: @redColor;
-				color: @whiteColor;
-			}
-		}
+    &__container {
+      clear: left;
+      display: block;
+    }
+  }
 
-		&__container {
-			clear: left;
-			display: block;
-		}
-	}
+  button {
+    .transition (@link: all @baseTransitionDuration ease-in-out 0s);
+    background-color: transparent;
 
-	button {
-		.transition (@link: all @baseTransitionDuration ease-in-out 0s);
-		background-color: transparent;
-
-		&.button {
-		position: relative;
-		left: 50%;
-		.transform-translate (@translate: translate(-50%, 0));
-		margin-top: (@margin * 3);
-		margin-bottom: (@margin * 4);
-		cursor: pointer;
-		color: @redColor;
-		}
-	}
+    &.button {
+      position: relative;
+      left: 50%;
+      .transform-translate (@translate: translate(-50%, 0));
+      margin-top: (@margin * 3);
+      margin-bottom: (@margin * 4);
+      cursor: pointer;
+      color: @redColor;
+    }
+  }
 }

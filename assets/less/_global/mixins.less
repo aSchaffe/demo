@@ -19,94 +19,95 @@ Copyright Axel Schaffrath
 }
 
 .user-select (@property: none) {
-  -webkit-user-select:  @property;
-     -moz-user-select:  @property;
-      -ms-user-select:  @property;
-       -o-user-select:  @property;
-          user-select:  @property;
+  -webkit-user-select: @property;
+  -moz-user-select: @property;
+  -ms-user-select: @property;
+  -o-user-select: @property;
+  user-select: @property;
 }
 
-.transition (@link: all @baseTransitionDuration ease-in-out 0s){
+.transition (@link: all @baseTransitionDuration ease-in-out 0s) {
   -webkit-transition: @link;
-     -moz-transition: @link;
-      -ms-transition: @link;
-       -o-transition: @link;
-          transition: @link;
+  -moz-transition: @link;
+  -ms-transition: @link;
+  -o-transition: @link;
+  transition: @link;
 }
 
 .border-radius (@radius: 0.25rem 0.25rem 0.25rem 0.25rem ) {
-  -webkit-border-radius:  @radius;
-     -moz-border-radius:  @radius;
-   -khtml-border-radius:  @radius;
-       -o-border-radius:  @radius;
-      -ms-border-radius:  @radius;
-          border-radius:  @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -khtml-border-radius: @radius;
+  -o-border-radius: @radius;
+  -ms-border-radius: @radius;
+  border-radius: @radius;
 }
 
 .box-shadow (@x: 0, @y: 0, @blur: 7px, @color: rgba(0, 0, 0, 0.5)) {
   -webkit-box-shadow: @arguments;
-     -moz-box-shadow: @arguments;
-   -khtml-box-shadow: @arguments;
-       -o-box-shadow: @arguments;
-      -ms-box-shadow: @arguments;
-          box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -khtml-box-shadow: @arguments;
+  -o-box-shadow: @arguments;
+  -ms-box-shadow: @arguments;
+  box-shadow: @arguments;
 }
 
 .box-shadow-inset (@shadow: inset 1px 1px 1px 1px @baseLinkColor) {
   -webkit-box-shadow: @shadow;
-     -moz-box-shadow: @shadow;
-   -khtml-box-shadow: @shadow;
-       -o-box-shadow: @shadow;
-      -ms-box-shadow: @shadow;
-          box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  -khtml-box-shadow: @shadow;
+  -o-box-shadow: @shadow;
+  -ms-box-shadow: @shadow;
+  box-shadow: @shadow;
 }
 
 .drop-shadow (@drop-shadow: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5))) {
   -webkit-filter: @drop-shadow;
-     -moz-filter: @drop-shadow;
-   -khtml-filter: @drop-shadow;
-       -o-filter: @drop-shadow;
-      -ms-filter: @drop-shadow;
-          filter: @drop-shadow;
+  -moz-filter: @drop-shadow;
+  -khtml-filter: @drop-shadow;
+  -o-filter: @drop-shadow;
+  -ms-filter: @drop-shadow;
+  filter: @drop-shadow;
 }
+
 .transform-scale (@scale: scale(1.25, 1.25)) {
-  -webkit-transform:  @scale;
-     -moz-transform:  @scale;
-       -o-transform:  @scale;
-      -ms-transform:  @scale;
-          transform:  @scale;
+  -webkit-transform: @scale;
+  -moz-transform: @scale;
+  -o-transform: @scale;
+  -ms-transform: @scale;
+  transform: @scale;
 }
 
 .transform-translate (@translate: translate(-50%, 0)) {
-  -webkit-transform:  @translate;
-     -moz-transform:  @translate;
-       -o-transform:  @translate;
-      -ms-transform:  @translate;
-          transform:  @translate;
+  -webkit-transform: @translate;
+  -moz-transform: @translate;
+  -o-transform: @translate;
+  -ms-transform: @translate;
+  transform: @translate;
 }
 
 .transform-rotate (@rotate: rotate(-315deg)) {
-  -webkit-transform:  @rotate;
-     -moz-transform:  @rotate;
-       -o-transform:  @rotate;
-      -ms-transform:  @rotate;
-          transform:  @rotate;
+  -webkit-transform: @rotate;
+  -moz-transform: @rotate;
+  -o-transform: @rotate;
+  -ms-transform: @rotate;
+  transform: @rotate;
 }
 
 .gray-scale (@scale: grayscale(50%)) {
   -webkit-filter: @scale;
-     -moz-filter: @scale;
-      -ms-filter: @scale;
-        o-filter: @scale;
-          filter: @scale;
+  -moz-filter: @scale;
+  -ms-filter: @scale;
+  o-filter: @scale;
+  filter: @scale;
 }
 
 .blur (@blur: blur(2px)) {
   -webkit-filter: @blur;
-     -moz-filter: @blur;
-      -ms-filter: @blur;
-        o-filter: @blur;
-          filter: @blur;
+  -moz-filter: @blur;
+  -ms-filter: @blur;
+  o-filter: @blur;
+  filter: @blur;
 }
 
 .hyphenate {
