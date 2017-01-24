@@ -184,6 +184,57 @@ $(document).ready(function () {
         event.preventDefault();
     });
 
+    //Modal box
+    var modalBox = {
+        layer: $('#modal'),
+        close: $('a.modal-close-btn'),
+        open: $('a.button--modal'),
+        section: $('section'),
+        bg: $('<div class="modal-bg"></div>')
+    };
+
+    $(modalBox.layer).css('left', function () {
+        return ($(this).offset().left) + ($(this).width() / 2) + 'px'
+    });
+
+    $(modalBox.layer).hide();
+
+    function slidemodalBox() {
+        $(modalBox.layer).fadeOut(500);
+        setTimeout(function () {
+            modalBox.bg.remove();
+            $(modalBox.layer).removeClass('is-active');
+        }, 400);
+    }
+
+    if (!$(event.target).hasClass('div.modal-container.is-active')) {
+        $(window).on('click', function () {
+            slidemodalBox();
+        });
+    }
+
+    $(modalBox.close).on('click', function (e) {
+        e.stopPropagation();
+        slidemodalBox();
+        // $('html, body').animate({
+        //     scrollTop: $(this).offset().top - $('#mainnav').height()
+        // }, 'slow');
+    });
+
+    $(modalBox.open).on('click', function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        // $('html, body').find(modalBox.layer).fadeOut().removeClass('is-active');
+        $('html, body').find(modalBox.layer).fadeIn(500).addClass('is-active');
+        modalBox.bg.remove();
+        setTimeout(function () {
+            $('body').append(modalBox.bg);
+        }, 400);
+        $('html, body').animate({
+            scrollTop: $(this).closest(modalBox.section).find(modalBox.layer).offset().top - $('#mainnav').height()
+        }, 'slow');
+    });
+
     //Resize content
     $(window).on('resize', function () {
         var nav = '#mainnav';

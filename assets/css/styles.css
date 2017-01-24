@@ -1625,6 +1625,69 @@ Copyright Axel Schaffrath
     margin-bottom: 0;
   }
 }
+.modal-container {
+  visibility: hidden;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  position: absolute;
+  top: 5.5rem;
+  left: 0;
+  width: 50vw;
+  background-color: #ffffff;
+  z-index: 99999;
+}
+.modal-container.is-active {
+  visibility: visible;
+}
+.modal__copy-text {
+  text-align: center;
+}
+.modal__copy-text-center {
+  padding: 2.5rem;
+}
+.modal__copy-headline {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 3.375rem;
+  font-family: 'Quicksand', sans-serif;
+}
+.modal__copy-headline--red {
+  color: #eb2f54;
+}
+.modal__copy-bold {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+}
+.modal-close-btn {
+  position: fixed;
+  display: block;
+  width: 1.875rem;
+  height: 1.875rem;
+  background: url(../images/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  right: 3.125rem;
+  top: 3.125rem;
+  cursor: pointer;
+}
+.modal-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  right: 0;
+  bottom: 0;
+  z-index: 99998;
+}
 @media all and (min-width: 62.5rem) {
   .gallery__first {
     padding-right: 0.3125rem;

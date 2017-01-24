@@ -120,6 +120,87 @@
   }
 }
 
+.modal-container {
+  visibility: hidden;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  position: absolute;
+  top: 5.5rem;
+  left: 0;
+  // bottom: 0;
+  width: 50vw;
+  background-color: @whiteColor;
+  z-index: 99999;
+
+  &.is-active {
+    visibility: visible;
+  }
+
+}
+
+.modal {
+
+  &__copy-text {
+    text-align: center;
+
+    &-center {
+      padding: (@padding * 4);
+    }
+  }
+
+  &__copy {
+
+    &-headline {
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 300;
+      font-size: 3rem;
+      line-height: 3.375rem;
+      font-family: @secondFontFace;
+
+      &--red {
+        color: @redColor;
+      }
+    }
+
+    &-bold {
+      font-weight: 700;
+      font-size: @base-font-size-large;
+      line-height: @baseLineHeight-large;
+    }
+  }
+
+  &-close-btn {
+    position: fixed;
+    display: block;
+    width: 1.875rem;
+    height: 1.875rem;
+    background: url(../images/close.png) top right no-repeat;
+    text-align: right;
+    outline: none;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.7;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+    right: 3.125rem;
+    top: 3.125rem;
+    cursor: pointer;
+  }
+}
+
+.modal-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: fade(#000, 80%);
+  right: 0;
+  bottom: 0;
+  z-index: 99998;
+}
+
 // Viewport for gallery
 @media all and (min-width: @tabletLandscapeViewport) {
   .gallery {
