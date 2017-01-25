@@ -205,7 +205,7 @@ $(document).ready(function () {
         setTimeout(function () {
             modalBox.bg.remove();
             $(modalBox.layer).removeClass('is-active');
-        }, 400);
+        }, 500);
     }
 
     $(modalBox.close).on('click', function (e) {
