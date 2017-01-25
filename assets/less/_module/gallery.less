@@ -122,18 +122,26 @@
 
 .modal-container {
   visibility: hidden;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
   position: absolute;
   top: 5.5rem;
   left: 0;
   // bottom: 0;
   width: 50vw;
-  background-color: @whiteColor;
   z-index: 99999;
+
+  .modal__copy-text {
+    padding: 2.5rem;
+    background-color: @whiteColor;
+    .transform-scale (@scale: scale(0, 0));
+    .transition (@link: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s);
+  }
 
   &.is-active {
     visibility: visible;
+
+    .modal__copy-text {
+      .transform-scale (@scale: scale(1, 1));
+    }
   }
 
 }
@@ -176,8 +184,8 @@
     display: block;
     width: 1.875rem;
     height: 1.875rem;
-    background: url(../images/close.png) top right no-repeat;
-    text-align: right;
+    background: url(../images/close.png) center center no-repeat;
+    text-align: center;
     outline: none;
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
     opacity: 0.7;
@@ -195,7 +203,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  background-color: fade(#000, 80%);
+  background-color: fade(#000, 60%);
   right: 0;
   bottom: 0;
   z-index: 99998;

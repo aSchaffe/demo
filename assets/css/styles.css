@@ -1627,17 +1627,35 @@ Copyright Axel Schaffrath
 }
 .modal-container {
   visibility: hidden;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
   position: absolute;
   top: 5.5rem;
   left: 0;
   width: 50vw;
-  background-color: #ffffff;
   z-index: 99999;
+}
+.modal-container .modal__copy-text {
+  padding: 2.5rem;
+  background-color: #ffffff;
+  -webkit-transform: scale(0, 0);
+  -moz-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -webkit-transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -moz-transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -ms-transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  -o-transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 .modal-container.is-active {
   visibility: visible;
+}
+.modal-container.is-active .modal__copy-text {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 .modal__copy-text {
   text-align: center;
@@ -1666,8 +1684,8 @@ Copyright Axel Schaffrath
   display: block;
   width: 1.875rem;
   height: 1.875rem;
-  background: url(../images/close.png) top right no-repeat;
-  text-align: right;
+  background: url(../images/close.png) center center no-repeat;
+  text-align: center;
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
@@ -1683,7 +1701,7 @@ Copyright Axel Schaffrath
   position: fixed;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   right: 0;
   bottom: 0;
   z-index: 99998;
