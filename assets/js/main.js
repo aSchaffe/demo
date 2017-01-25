@@ -201,35 +201,29 @@ $(document).ready(function () {
 
     function slidemodalBox() {
         $(modalBox.layer).fadeOut(300);
+        $(modalBox.bg).fadeOut(300);
         setTimeout(function () {
             modalBox.bg.remove();
             $(modalBox.layer).removeClass('is-active');
-        }, 200);
+        }, 400);
     }
 
     $(modalBox.close).on('click', function (e) {
-        e.stopPropagation();
         slidemodalBox();
-        // $('html, body').animate({
-        //     scrollTop: $(this).offset().top - $('#mainnav').height()
-        // }, 'slow');
     });
 
     $(modalBox.open).on('click', function (event) {
-
-        if (!$(event.target).hasClass('div.modal-container.is-active')) {
+        var target = event.target;
+        if (!$(target).is('.modal-container')) {
             $(window).on('click', function () {
                 slidemodalBox();
             });
         }
         event.stopPropagation();
         event.preventDefault();
-        // $('html, body').find(modalBox.layer).fadeOut().removeClass('is-active');
         $('html, body').find(modalBox.layer).fadeIn(300).addClass('is-active');
-        modalBox.bg.remove();
-        setTimeout(function () {
-            $('body').append(modalBox.bg);
-        }, 200);
+        $('body').append(modalBox.bg);
+        $(modalBox.bg).hide().fadeIn(300);
         $('html, body').animate({
             scrollTop: $(this).closest(modalBox.section).find(modalBox.layer).offset().top - $('#mainnav').height()
         }, 'slow');
