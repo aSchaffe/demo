@@ -220,10 +220,8 @@ $(document).ready(function () {
     $(modalBox.open).on('click', function (event) {
         event.preventDefault();
         $(window).on('click', function () {
-            if (!$(event.target).is(modalBox.layer)) {
                 slidemodalBox(modalBox.layer);
                 slidemodalBox(modalBox.bg);
-            }
         });
         event.stopPropagation();
         $('html, body').find(modalBox.layer).fadeIn(300).addClass('is-active');
@@ -232,6 +230,18 @@ $(document).ready(function () {
         $('html, body').animate({
             scrollTop: $(this).closest(modalBox.section).find(modalBox.layer).offset().top - $('#mainnav').height()
         }, 'slow');
+
+        if ($(modalBox.layer).hasClass('is-active')) {
+            $(modalBox.layer).on('click', function (ev) {
+                $(window).on('click', function () {
+                    if (!$(ev.target).is(modalBox.layer)) {
+                    } else {
+                        ev.preventDefault();
+                    }
+                });
+                ev.stopPropagation();
+            });
+        }
     });
 
     //Resize content
