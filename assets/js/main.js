@@ -205,7 +205,8 @@ $(document).ready(function () {
     $(modalBox.layer).hide();
 
     function slidemodalBox(element) {
-        $(element).fadeOut(300);
+        $(modalBox.layer).fadeOut(300);
+        $(modalBox.bg).fadeOut(300);
         setTimeout(function () {
             modalBox.bg.remove();
             $(modalBox.layer).removeClass('is-active');
@@ -213,20 +214,18 @@ $(document).ready(function () {
     }
 
     $(modalBox.close).on('click', function (e) {
-        slidemodalBox(modalBox.layer);
-        slidemodalBox(modalBox.bg);
+        slidemodalBox();
     });
 
     $(modalBox.open).on('click', function (event) {
-        var target = event.target;
-        if (!$(target).is('.modal-container')) {
-            $(window).on('click', function () {
+        event.preventDefault();
+        $(window).on('click', function () {
+            if (!$(event.target).is(modalBox.layer)) {
                 slidemodalBox(modalBox.layer);
                 slidemodalBox(modalBox.bg);
-            });
-        }
+            }
+        });
         event.stopPropagation();
-        event.preventDefault();
         $('html, body').find(modalBox.layer).fadeIn(300).addClass('is-active');
         $('body').append(modalBox.bg);
         $(modalBox.bg).hide().fadeIn(300);
