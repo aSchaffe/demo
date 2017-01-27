@@ -43,12 +43,12 @@
         background-color: fade(@whiteColor, 80%);
         .transform-translate (@translate: translate(-50%, -50%));
         .border-radius (@radius: 0 2.5rem 0 2.5rem);
-        .transition (@link: all @baseTransitionDuration ease-in-out 0s);
-      }
+        .transition (@link: opacity 0.5s ease-in-out 0s);
 
-      &:hover &-inner {
-        visibility: visible;
-        opacity: 1;
+        &.is-acitve {
+          visibility: visible;
+          opacity: 1;
+        }
       }
 
       &-center {

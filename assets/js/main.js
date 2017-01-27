@@ -16,17 +16,22 @@ $(document).ready(function () {
         $('#content').hide();
     } else {
         $(window).scroll(function () {
-            setTimeout(function () {
-                $('div.bounce').remove();
-            }, 500);
             $(slider).each(function () {
                 var pos = $(this).offset().top;
                 var winTop = $(window).scrollTop();
-                if (pos < winTop + 130) {
+                if (pos < winTop + $('#mainnav').height() + 50) {
                     slideIn(slider);
+                    setTimeout(function () {
+                        $('div.bounce').remove();
+                    }, 300);
                 }
             });
             $(buttonMore).show();
+            if ($(slider).offset().top < $(window).scrollTop() + $('#mainnav').height() + 50) {
+                setTimeout(function () {
+                    $('.gallery__copy-text-inner').addClass('is-acitve');
+                }, 2000);
+            }
         });
     }
 
@@ -188,13 +193,13 @@ $(document).ready(function () {
     var modalBox = {
         layer: $('#modal'),
         close: $('a.modal-close-btn'),
-        open: $('a.button--modal'),
+        open: $('a.modal-open-btn'),
         section: $('section'),
         bg: $('<div class="modal-bg"></div>')
     };
 
     $(modalBox.layer).css('left', function () {
-        return ($(this).offset().left) + ($(this).width() / 2) + 'px'
+        return ($(window).width() / 2 ) - ($(this).width() / 2) + 'px'
     });
 
     $(modalBox.layer).hide();

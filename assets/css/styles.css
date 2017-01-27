@@ -1552,13 +1552,13 @@ Copyright Axel Schaffrath
     -o-border-radius: 0 2.5rem 0 2.5rem;
     -ms-border-radius: 0 2.5rem 0 2.5rem;
     border-radius: 0 2.5rem 0 2.5rem;
-    -webkit-transition: all 0.25s ease-in-out 0s;
-    -moz-transition: all 0.25s ease-in-out 0s;
-    -ms-transition: all 0.25s ease-in-out 0s;
-    -o-transition: all 0.25s ease-in-out 0s;
-    transition: all 0.25s ease-in-out 0s;
+    -webkit-transition: opacity 0.5s ease-in-out 0s;
+    -moz-transition: opacity 0.5s ease-in-out 0s;
+    -ms-transition: opacity 0.5s ease-in-out 0s;
+    -o-transition: opacity 0.5s ease-in-out 0s;
+    transition: opacity 0.5s ease-in-out 0s;
   }
-  .gallery__copy-text:hover .gallery__copy-text-inner {
+  .gallery__copy-text-inner.is-acitve {
     visibility: visible;
     opacity: 1;
   }
