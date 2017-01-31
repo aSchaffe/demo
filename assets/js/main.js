@@ -191,7 +191,7 @@ $(document).ready(function () {
 
     //Modal box
     var modalBox = {
-        layer: $('#modal'),
+        layer: $('.modal-container'),
         close: $('a.modal-close-btn'),
         open: $('a.modal-open-btn'),
         section: $('section'),
@@ -202,9 +202,11 @@ $(document).ready(function () {
         return ($(window).width() / 2 ) - ($(this).width() / 2) + 'px'
     });
 
+    // console.log(idTarget());
+
     $(modalBox.layer).hide();
 
-    function slidemodalBox(element) {
+    function slidemodalBox() {
         $(modalBox.layer).fadeOut(300);
         $(modalBox.bg).fadeOut(300);
         setTimeout(function () {
@@ -213,23 +215,30 @@ $(document).ready(function () {
         }, 500);
     }
 
-    $(modalBox.close).on('click', function (e) {
+    $(modalBox.close).on('click', function () {
         slidemodalBox();
     });
 
     $(modalBox.open).on('click', function (event) {
         event.preventDefault();
         $(window).on('click', function () {
-                slidemodalBox(modalBox.layer);
-                slidemodalBox(modalBox.bg);
+            slidemodalBox();
         });
         event.stopPropagation();
-        $('html, body').find(modalBox.layer).fadeIn(300).addClass('is-active');
+
+        $(this).each(function () {
+            var modalId = $('html, body').find('' + $(this).data("target"));
+            if ($(modalId) !== 'undefined') {
+                $(modalId).fadeIn(300).addClass('is-active');
+                $('html, body').animate({
+                    scrollTop: $(modalId).offset().top - $('#mainnav').height()
+                }, 'slow');
+            } else {
+                return false;
+            }
+        });
         $('body').append(modalBox.bg);
         $(modalBox.bg).hide().fadeIn(300);
-        $('html, body').animate({
-            scrollTop: $(this).closest(modalBox.section).find(modalBox.layer).offset().top - $('#mainnav').height()
-        }, 'slow');
 
         if ($(modalBox.layer).hasClass('is-active')) {
             $(modalBox.layer).on('click', function (ev) {
@@ -251,6 +260,10 @@ $(document).ready(function () {
         $(nav).find('ul').eq(0).css({
             left: $(window).width() / 2 + 'px',
             'margin-left': -($(nav).find('ul').eq(0).width() / 2) + 'px'
+        });
+
+        $(modalBox.layer).css('left', function () {
+            return ($(window).width() / 2 ) - ($(this).width() / 2) + 'px'
         });
 
         if ($(window).width() > 999) {
