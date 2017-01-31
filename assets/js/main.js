@@ -202,8 +202,6 @@ $(document).ready(function () {
         return ($(window).width() / 2 ) - ($(this).width() / 2) + 'px'
     });
 
-    // console.log(idTarget());
-
     $(modalBox.layer).hide();
 
     function slidemodalBox() {
@@ -221,6 +219,7 @@ $(document).ready(function () {
 
     $(modalBox.open).on('click', function (event) {
         event.preventDefault();
+
         $(window).on('click', function () {
             slidemodalBox();
         });
@@ -237,6 +236,7 @@ $(document).ready(function () {
                 return false;
             }
         });
+
         $('body').append(modalBox.bg);
         $(modalBox.bg).hide().fadeIn(300);
 
