@@ -235,7 +235,7 @@ $(document).ready(function () {
 
         $(this).each(function () {
             var modalId = $('html, body').find('' + $(this).data("target"));
-            if ($(modalId) !== 'undefined') {
+            if (typeof $(modalId) !== 'undefined') {
                 $(modalId).fadeIn(300).addClass('is-active');
                 $('html, body').animate({
                     scrollTop: $(modalId).offset().top - $('#mainnav').height()
