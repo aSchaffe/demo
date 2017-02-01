@@ -30,7 +30,7 @@ $(document).ready(function () {
             if ($(slider).offset().top < $(window).scrollTop() + $('#mainnav').height() + 50) {
                 setTimeout(function () {
                     $('.gallery__copy-text-inner').addClass('is-acitve');
-                }, 2000);
+                }, 1000);
             }
         });
     }
@@ -140,9 +140,11 @@ $(document).ready(function () {
         });
     }
 
-    //Sticky Nav confi
+    //Sticky nav setting
     var mainNav = document.querySelector('#mainnav');
     var topOfNav = mainNav.offsetTop;
+
+    window.innerWidth < 768 ? mainNav.style.display = 'none' : mainNav.style.display = '';
 
     function fixNav() {
         if (window.scrollY > topOfNav) {
@@ -174,8 +176,12 @@ $(document).ready(function () {
     $(navElements.ul).hide();
 
     $("#mainnav ul li:has(ul)").hover(function () {
-        $(this).find("ul").slideDown('300');
-
+        $(this).find("ul").slideDown(300);
+        $(navElements.link).on('click', function () {
+            if ($(navElements.ul).is(':visible')) {
+                $(navElements.ul).slideUp(300);
+            }
+        });
     }, function () {
         $(this).find("ul").hide();
     });
@@ -192,7 +198,7 @@ $(document).ready(function () {
     //Modal box
     var modalBox = {
         layer: $('.modal-container'),
-        close: $('a.modal-close-btn'),
+        close: $('<a class="modal-close-btn"></a>'),
         open: $('a.modal-open-btn'),
         section: $('section'),
         bg: $('<div class="modal-bg"></div>')
@@ -204,7 +210,7 @@ $(document).ready(function () {
 
     $(modalBox.layer).hide();
 
-    function slidemodalBox() {
+    function slideModalBox() {
         $(modalBox.layer).fadeOut(300);
         $(modalBox.bg).fadeOut(300);
         setTimeout(function () {
@@ -213,15 +219,17 @@ $(document).ready(function () {
         }, 500);
     }
 
-    $(modalBox.close).on('click', function () {
-        slidemodalBox();
+    $(modalBox.layer).append(modalBox.close);
+
+    $('a.modal-close-btn').on('click', function () {
+        slideModalBox();
     });
 
     $(modalBox.open).on('click', function (event) {
         event.preventDefault();
 
         $(window).on('click', function () {
-            slidemodalBox();
+            slideModalBox();
         });
         event.stopPropagation();
 
@@ -289,15 +297,8 @@ $(document).ready(function () {
             });
         }
 
-        if ($(window).width() < 1200) {
-            $('.gallery__copy-text-inner').fadeOut('2000');
-        } else {
-            $('.gallery__copy-text-inner').fadeIn('2000');
-        }
-        if ($(window).width() < 768) {
-            $('#content, #mainnav').fadeOut('2000');
-        } else {
-            $('#content, #mainnav').fadeIn('2000');
-        }
+        $(window).width() < 1200 ? $('.gallery__copy-text-inner').fadeOut('2000') : $('.gallery__copy-text-inner').fadeIn('2000');
+
+        $(window).width() < 768 ? $('#content, #mainnav').fadeOut('2000') : $('#content, #mainnav').fadeIn('2000');
     });
 });
