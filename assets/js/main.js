@@ -211,12 +211,12 @@ $(document).ready(function () {
     $(modalBox.layer).hide();
 
     function slideModalBox() {
-        $(modalBox.layer).fadeOut(300);
-        $(modalBox.bg).fadeOut(300);
+        $(modalBox.layer).fadeOut(500);
+        $(modalBox.bg).fadeOut(500);
         setTimeout(function () {
             modalBox.bg.remove();
             $(modalBox.layer).removeClass('is-active');
-        }, 500);
+        }, 700);
     }
 
     $(modalBox.layer).append(modalBox.close);
@@ -236,29 +236,27 @@ $(document).ready(function () {
         $(this).each(function () {
             var modalId = $('html, body').find('' + $(this).data("target"));
             if (typeof $(modalId) !== 'undefined') {
-                $(modalId).fadeIn(300).addClass('is-active');
+                $(modalId).fadeIn(500).addClass('is-active');
                 $('html, body').animate({
                     scrollTop: $(modalId).offset().top - $('#mainnav').height()
                 }, 'slow');
-            } else {
-                return false;
+
+                $('body').append(modalBox.bg);
+                $(modalBox.bg).hide().fadeIn(500);
+
+                if ($(modalId).hasClass('is-active')) {
+                    $(modalId).on('click', function (ev) {
+                        $(window).on('click', function () {
+                            if (!$(ev.target).is(modalId)) {
+                            } else {
+                                ev.preventDefault();
+                            }
+                        });
+                        ev.stopPropagation();
+                    });
+                }
             }
         });
-
-        $('body').append(modalBox.bg);
-        $(modalBox.bg).hide().fadeIn(300);
-
-        if ($(modalBox.layer).hasClass('is-active')) {
-            $(modalBox.layer).on('click', function (ev) {
-                $(window).on('click', function () {
-                    if (!$(ev.target).is(modalBox.layer)) {
-                    } else {
-                        ev.preventDefault();
-                    }
-                });
-                ev.stopPropagation();
-            });
-        }
     });
 
     //Resize content
