@@ -258,6 +258,40 @@ $(document).ready(function () {
         });
     });
 
+    // //Checkbox confirm
+    // $('fieldset.checkbox-container label').html('<span>Ich habe die <a href="datenschutz" target="_blank" title="Ich habe die Datenschutzbedingungen gelesen und stimme diesen zu!">Datenschutzbedingungen</a> gelesen und stimme diesen zu!<span class="mandatory">*</span></span>');
+    //
+    // var button = 'div.submit-container > input',
+    //     input = 'input.checkbox',
+    //     value = 'Daten ausfüllen ...',
+    //     buttonClass = 'no-active';
+    //
+    // $(button).attr({
+    //     title: 'Bitte bestätigen Sie die Datenschutzbestimmungen',
+    //     disabled: true,
+    //     value: value
+    // });
+    //
+    // $(button).addClass(buttonClass);
+    //
+    // $(input).on('click', function () {
+    //     if ($(this).is(':checked')) {
+    //         $(button).removeAttr('disabled');
+    //         $(button).removeClass(buttonClass);
+    //         $('input.submit').attr({
+    //             title: 'Anfrage senden ...',
+    //             value: 'Anfrage senden ...'
+    //         });
+    //     } else {
+    //         $(button).attr({
+    //             title: 'Bitte bestätigen Sie die Datenschutzbestimmungen',
+    //             disabled: true,
+    //             value: value
+    //         });
+    //         $(button).addClass(buttonClass);
+    //     }
+    // });
+
     //Resize content
     $(window).on('resize', function () {
         var nav = '#mainnav';
