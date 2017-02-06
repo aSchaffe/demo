@@ -1,3 +1,10 @@
+/*
+ * @author:		Axel Schaffrath
+ * @copyright:	2017 info@axel-schaffrath.de
+ * @module:		gallery slider, sticky nav, modal box
+ * @license:	LGPL
+ */
+
 $(document).ready(function () {
     var slider = '.slideanim',
         sliderMore = '.slide-more',

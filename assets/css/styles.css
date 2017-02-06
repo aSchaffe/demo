@@ -181,32 +181,20 @@ img {
 Copyright Axel Schaffrath
 */
 @font-face {
-  font-family: "lto";
-  src: url("../fonts/lto/lto.eot");
-  src: url("../fonts/lto/lto.eot?#iefix") format("embedded-opentype"), url("../fonts/lto/lto.woff") format("woff"), url("../fonts/lto/lto.ttf") format("truetype"), url("../fonts/lto/lto.svg#lto") format("svg");
+  font-family: 'gastro';
+  src: url('/files/fonts/font-demo/gastro.eot');
+  src: url('/files/fonts/font-demo/gastro.eot?#iefix') format('embedded-opentype'), url('/files/fonts/font-demo/gastro.woff') format('woff'), url('/files/fonts/font-demo/gastro.ttf') format('truetype'), url('/files/fonts/font-demo/gastro.svg#gastro') format('svg');
   font-weight: normal;
   font-style: normal;
-}
-[data-fg]:before {
-  font-family: "lto";
-  content: attr(data-fg);
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 .fg {
   display: inline-block;
   text-rendering: auto;
-  font-family: 'lto';
-  font-style: normal;
+  font-family: 'gastro' !important;
+  font-style: normal !important;
   font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
+  font-variant: normal !important;
+  text-transform: none !important;
   speak: none;
   font-strech: normal;
   font-kerning: normal;
@@ -216,86 +204,109 @@ Copyright Axel Schaffrath
   font-synthesis: weight style;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  vertical-align: middle;
+  top: 0.1875rem;
+  left: 0.0625rem;
   position: relative;
+  margin-right: 0.1875rem;
 }
 .fg:before {
   font-weight: 400;
 }
-.fg.fg-book-calc:before {
-  content: "\61";
+.fg.fg-iphone:before {
+  content: '\e000';
 }
-.fg.fg-book-people:before {
-  content: "\62";
+.fg.fg-arrow-thin-right:before {
+  content: '\e001';
 }
-.fg.fg-search:before {
-  content: "\63";
-}
-.fg.fg-social-facebook:before {
-  content: "\64";
-}
-.fg.fg-social-googleplus:before {
-  content: "\65";
-}
-.fg.fg-social-instagram:before {
-  content: "\66";
-}
-.fg.fg-social-twitter:before {
-  content: "\67";
-}
-.fg.fg-social-youtube:before {
-  content: "\68";
-}
-.fg.fg-arrow-up:before {
-  content: "\6a";
-}
-.fg.fg-arrow-down:before {
-  content: "\6b";
+.fg.fg-telephone:before {
+  content: '\e002';
 }
 .fg.fg-arrow-right:before {
-  content: "\6c";
+  content: '\e003';
 }
-.fg.fg-arrow-left:before {
-  content: "\69";
+.fg.fg-arrow-down:before {
+  content: '\e004';
 }
-.fg.fg-information-outline:before {
-  content: "\6d";
+.fg.fg-world:before {
+  content: '\e005';
 }
-.fg.fg-close-outline:before {
-  content: "\6f";
+.fg.fg-eye:before {
+  content: '\e006';
 }
-.fg.fg-location-outline:before {
-  content: "\70";
+.fg.fg-location:before {
+  content: '\e007';
 }
-.fg.fg-download-outline:before {
-  content: "\71";
+.fg.fg-arrow-up:before {
+  content: '\e008';
 }
-.fg.fg-checkmark-empty:before {
-  content: "\72";
+.fg.fg-social-twitter:before {
+  content: '\e009';
 }
-.fg.fg-email-outline:before {
-  content: "\73";
+.fg.fg-social-googleplus:before {
+  content: '\e00a';
+}
+.fg.fg-home:before {
+  content: '\e00b';
+}
+.fg.fg-social-facebook:before {
+  content: '\e00c';
+}
+.fg.fg-paperplane:before {
+  content: '\e00d';
+}
+.fg.fg-people:before {
+  content: '\e00e';
+}
+.fg.fg-plus:before {
+  content: '\e00f';
+}
+.fg.fg-checkmark:before {
+  content: '\e010';
+}
+.fg.fg-printer:before {
+  content: '\e011';
+}
+.fg.fg-search:before {
+  content: '\e012';
+}
+.fg.fg-star:before {
+  content: '\e013';
+}
+.fg.fg-flame:before {
+  content: '\e014';
+}
+.fg.fg-bookmarks:before {
+  content: '\e015';
+}
+.fg.fg-at:before {
+  content: '\e016';
 }
 .fg.fg-navicon:before {
-  content: "\6e";
+  content: '\e017';
 }
-.fg.fg-blockquote:before {
-  content: "\74";
+.fg.fg-help:before {
+  content: '\e018';
 }
-.fg.fg-dot:before {
-  content: "\75";
+.fg.fg-arrow-left:before {
+  content: '\e019';
 }
-.fg.fg-map:before {
-  content: "\76";
+.fg.fg-email:before {
+  content: '\e01b';
 }
-.fg.fg-media:before {
-  content: "\77";
+.fg.fg-close:before {
+  content: '\e01c';
 }
-.fg.fg-weather:before {
-  content: "\78";
+.fg.fg-lightbulb:before {
+  content: '\e01d';
 }
-.fg.fg-web-cam:before {
-  content: "\79";
+.fg.fg-flash:before {
+  content: '\e01e';
+}
+.fg.fg-gear:before {
+  content: '\e01f';
+}
+.fg.fg-monitor:before {
+  content: '\e020';
 }
 /*
 Copyright Axel Schaffrath
@@ -1914,18 +1925,14 @@ Copyright Axel Schaffrath
       transform: translateX(0%);
     }
   }
-  .fa {
-    width: 3.75rem;
+  .fg {
     display: block;
     text-align: center;
     color: #eb2f54;
-    font: normal 2.8125rem 'FontAwesome';
+    font: normal 2.8125rem 'gastro';
     line-height: 3.75rem;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-  }
-  .fa.fa-angle-double-down:before {
-    content: "\f103";
   }
   .bounce {
     position: absolute;
