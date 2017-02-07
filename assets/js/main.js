@@ -31,14 +31,12 @@ $(document).ready(function () {
                     setTimeout(function () {
                         $('div.bounce').remove();
                     }, 300);
+                    setTimeout(function () {
+                        $('.gallery__copy-text-inner').addClass('is-acitve');
+                    }, 1000);
                 }
             });
-            $(buttonMore).show();
-            if ($(slider).offset().top < $(window).scrollTop() + $('#mainnav').height() + 50) {
-                setTimeout(function () {
-                    $('.gallery__copy-text-inner').addClass('is-acitve');
-                }, 1000);
-            }
+            $(buttonMore).fadeIn(1000);
         });
     }
 
@@ -110,14 +108,16 @@ $(document).ready(function () {
     //Callback with inner function
     var newContainer = $('<div class="inner-function"></div>');
 
+    newContainer.hide();
+
     function outputFunction(item) {
         $('.row').eq(1).append(newContainer);
-        $('.inner-function').html(item);
+        newContainer.html(item).fadeIn(1000);
     }
 
     function getItem(inner) {
         return function () {
-            outputFunction(inner)
+            outputFunction(inner);
         }
     }
 
