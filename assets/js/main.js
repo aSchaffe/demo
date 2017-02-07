@@ -108,16 +108,14 @@ $(document).ready(function () {
     //Callback with inner function
     var newContainer = $('<div class="inner-function"></div>');
 
-    newContainer.hide();
-
     function outputFunction(item) {
         $('.row').eq(1).append(newContainer);
-        newContainer.html(item).fadeIn(1000);
+        newContainer.html(item);
     }
 
     function getItem(inner) {
         return function () {
-            outputFunction(inner);
+            outputFunction(inner)
         }
     }
 
