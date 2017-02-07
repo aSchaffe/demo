@@ -1,7 +1,7 @@
 /*
  * @author:		Axel Schaffrath
  * @copyright:	2017 info@axel-schaffrath.de
- * @module:		gallery slider, sticky nav, modal box
+ * @module:		gallery slider, stickynav, modal box
  * @license:	LGPL
  */
 
