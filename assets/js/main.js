@@ -18,6 +18,22 @@ $(document).ready(function () {
         });
     }
 
+    //Callback with inner function
+    var newContainer = $('<div class="inner-function"></div>');
+
+    function outputFunction(item) {
+        $('.row').eq(1).append(newContainer);
+        newContainer.html(item);
+    }
+
+    function getItem(inner) {
+        return function () {
+            outputFunction(inner);
+        }
+    }
+
+    $(window).on('scroll', getItem('<p>Weitere Bilder werden mit der Methode <strong>$.get()</strong> sowie <strong>$.getJSON()</strong> beim Click des Buttons geladen.</p>'));
+
     $(buttonMore).hide();
     if ($(window).width() < 480) {
         $('#content').hide();
@@ -49,7 +65,8 @@ $(document).ready(function () {
             var spinner = $('<div id="spinner"><img src="assets/images/loading.gif"/></div>');
             var src = [];
             var offset = button.offset();
-            button.hide('fast');
+            button.fadeOut('fast');
+            newContainer.fadeOut('fast');
             $(sliderMore).find('img').each(function (i, el) {
                 var $el = $(el);
                 var dataSrc = $el.attr('data-src');
@@ -99,27 +116,8 @@ $(document).ready(function () {
                     loadImages(blog);
                 });
             });
-
-            $('.inner-function').fadeOut('slow');
-
         });
     }
-
-    //Callback with inner function
-    var newContainer = $('<div class="inner-function"></div>');
-
-    function outputFunction(item) {
-        $('.row').eq(1).append(newContainer);
-        newContainer.html(item);
-    }
-
-    function getItem(inner) {
-        return function () {
-            outputFunction(inner)
-        }
-    }
-
-    $(window).on('scroll', getItem('<p>Weitere Bilder werden mit der Methode <strong>$.get()</strong> sowie <strong>$.getJSON()</strong> beim Click des Buttons geladen.</p>'));
 
     // Set margin top slide
     if ($(window).width() > 768) {
