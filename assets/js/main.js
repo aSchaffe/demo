@@ -208,7 +208,7 @@ $(document).ready(function () {
     };
 
     $(modalBox.layer).css('left', function () {
-        return ($(window).width() / 2 ) - ($(this).width() / 2) + 'px'
+        return ($(window).width() / 2 ) - ($(this).width() / 2) + 'px';
     });
 
     $(modalBox.layer).hide();
