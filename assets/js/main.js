@@ -5,7 +5,7 @@
  * @license:	LGPL
  */
 
-$(document).ready(function () {
+jQuery(document).ready(function ($) {
     var slider = '.slideanim',
         sliderMore = '.slide-more',
         slide = 'slide',
