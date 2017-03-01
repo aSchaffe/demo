@@ -173,7 +173,7 @@ jQuery(document).ready(function ($) {
 
     $(nav).find('ul').eq(0).css({
         left: $(window).width() / 2 + 'px',
-        'margin-left': -($(nav).find('ul').eq(0).width() / 2) + 'px'
+        'margin-left': Math.round(-($(nav).find('ul').eq(0).width()), 0) / 2 + 'px'
     });
 
     $(navElements.ul).hide();
@@ -208,7 +208,7 @@ jQuery(document).ready(function ($) {
     };
 
     $(modalBox.layer).css('left', function () {
-        return ($(window).width() / 2 ) - ($(this).width() / 2) + 'px';
+        return Math.round(($(window).width() / 2 ) - ($(this).width() / 2), 0) + 'px';
     });
 
     $(modalBox.layer).hide();
@@ -301,11 +301,11 @@ jQuery(document).ready(function ($) {
 
         $(nav).find('ul').eq(0).css({
             left: $(window).width() / 2 + 'px',
-            'margin-left': -($(nav).find('ul').eq(0).width() / 2) + 'px'
+            'margin-left': Math.round(-($(nav).find('ul').eq(0).width()), 0) / 2 + 'px'
         });
 
         $(modalBox.layer).css('left', function () {
-            return ($(window).width() / 2 ) - ($(this).width() / 2) + 'px'
+            return Math.round(($(window).width() / 2 ) - ($(this).width() / 2), 0) + 'px'
         });
 
         if ($(window).width() > 999) {
