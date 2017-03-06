@@ -213,26 +213,26 @@ jQuery(document).ready(function ($) {
 
     $(modalBox.layer).hide();
 
-    function slideModalBox() {
-        $(modalBox.layer).fadeOut(500);
-        $(modalBox.bg).fadeOut(500);
+    function slideModalBox(modal, modalbg) {
+        $(modal).fadeOut(500);
+        $(modalbg).fadeOut(500);
         setTimeout(function () {
-            modalBox.bg.remove();
-            $(modalBox.layer).removeClass('is-active');
+            modalbg.remove();
+            $(modal).removeClass('is-active');
         }, 700);
     }
 
     $(modalBox.layer).append(modalBox.close);
 
     $('a.modal-close-btn').on('click', function () {
-        slideModalBox();
+        slideModalBox(modalBox.layer, modalBox.bg);
     });
 
     $(modalBox.open).on('click', function (event) {
         event.preventDefault();
 
         $(window).on('click', function () {
-            slideModalBox();
+            slideModalBox(modalBox.layer, modalBox.bg);
         });
         event.stopPropagation();
 
