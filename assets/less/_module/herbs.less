@@ -1,0 +1,53 @@
+.content {
+  text-align: left;
+  border: 1px solid @lilaColor;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.icon {
+  background-color: @whiteColor;
+
+  & ul {
+    overflow: hidden;
+    border-bottom: 1px solid @lilaColor;
+    margin-bottom: 0;
+  }
+
+  & img {
+    cursor: pointer;
+  }
+}
+
+.image {
+  width: 25%;
+  float: left;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-right: 2rem;
+}
+
+.information {
+  padding: 2.5rem;
+  width: 75%;
+  float: left;
+  background-color: @gray-lighter;
+
+  & h3 {
+    font-size: 3rem;
+    margin: 0 0 0.3125rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 3.375rem;
+    font-family: @secondFontFace;
+    color: @redColor;
+  }
+
+  & strong {
+    margin: 0.3125rem 0;
+    font-size: @base-font-size-large;
+    line-height: @baseLineHeight-large;
+  }
+}

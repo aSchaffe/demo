@@ -5,7 +5,7 @@
  * @license:	LGPL
  */
 
-jQuery(document).ready(function ($) {
+$(function () {
     var slider = '.slideanim',
         sliderMore = '.slide-more',
         slide = 'slide',
@@ -22,7 +22,7 @@ jQuery(document).ready(function ($) {
     var newContainer = $('<div class="inner-function"></div>');
 
     function outputFunction(item) {
-        $('.row').eq(1).append(newContainer);
+        $('.container-fluid.gallery .row').append(newContainer);
         newContainer.html(item);
     }
 
@@ -294,6 +294,88 @@ jQuery(document).ready(function ($) {
     //         $(button).addClass(buttonClass);
     //     }
     // });
+
+
+    //Start Kraeuter-Bar
+
+    var counter = 0;
+
+    //Event-Handler für die Icons
+    $('img[data-name]').on('click', iconClick);
+
+    //Event-Handler Icon Widder nach dem Laden der Seite
+    $('img[data-name="basilikum"]').trigger('click', iconClick);
+
+    //Function nach auslösen des Events laut Aufgabenstellung
+    function iconClick() {
+        counter++;
+
+        var $self = $(this);
+        var $dataAttr = $self.attr('data-name');
+        var url = 'json/' + $dataAttr + '.json';
+        var title = '.information h3';
+        var times = '.information strong';
+        var description = '.information p';
+        var images = '.image img';
+        var $imgWidth = $('.image').innerWidth();
+
+        function jsonGet() {
+            $.getJSON(url, function (data) {
+                $(title).text(data.herbs);
+                $(times).text(data.subdescription);
+                $(description).text(data.description);
+                $(images).attr('src', 'files/img/herbs/large/' + data.bild);
+
+            })
+                .fail(function (jqXHR, status, error) {
+                    $(description).html('Upps hier ist was falsch: ' + jqXHR.status + ' ' + error).show();
+                });
+        }
+
+        if (counter > 1) {
+            var information = '.information';
+            counter--;
+            setTimeout(function () {
+                $(information).animate({
+                    opacity: 0
+                }, {
+                    duration: 700,
+                    easing: 'swing'
+                });
+            }, 300);
+            $(images).parent()
+                .animate({
+                    'margin-left': -$imgWidth
+                }, {
+                    duration: 500,
+                    easing: 'swing',
+                    complete: function () {
+                        $(information).animate({
+                            opacity: 1
+                        }, {
+                            duration: 500,
+                            easing: 'swing'
+                        });
+                        setTimeout(function () {
+                            jsonGet();
+                            $(images).parent().css({
+                                'margin-left': -$imgWidth
+                            })
+                                .animate({
+                                    'margin-left': 0
+                                }, {
+                                    duration: 700,
+                                    easing: 'swing'
+                                });
+                        }, 500);
+                    }
+                });
+        } else {
+            jsonGet();
+        }
+        return false;
+    }
+
 
     //Resize content
     $(window).on('resize', function () {

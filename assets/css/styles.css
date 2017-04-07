@@ -1516,12 +1516,8 @@ Copyright Axel Schaffrath
   .gallery {
     padding-bottom: 5rem;
   }
-  .gallery__first {
-    margin: 0;
-  }
   .gallery__first,
   .gallery__last {
-    margin: 0;
     overflow: visible;
   }
   .gallery__first figure,
@@ -1719,11 +1715,7 @@ Copyright Axel Schaffrath
 }
 @media all and (min-width: 62.5rem) {
   .gallery__first {
-    padding-right: 0.3125rem;
     text-align: right;
-  }
-  .gallery__last {
-    padding-left: 0.3125rem;
   }
   .gallery__first figure img,
   .gallery__last figure img {
@@ -2091,4 +2083,84 @@ nav ul li ul li a {
 }
 .fixed-nav nav ul li ul {
   background-color: #ffffff;
+}
+.content {
+  text-align: left;
+  border: 1px solid #51515D;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+}
+.icon {
+  background-color: #ffffff;
+}
+.icon ul {
+  overflow: hidden;
+  border-bottom: 1px solid #51515D;
+  margin-bottom: 0;
+}
+.icon img {
+  cursor: pointer;
+}
+.image {
+  width: 25%;
+  float: left;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-right: 2rem;
+}
+.information {
+  padding: 2.5rem;
+  width: 75%;
+  float: left;
+  background-color: #eee;
+}
+.information h3 {
+  font-size: 3rem;
+  margin: 0 0 0.3125rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+  line-height: 3.375rem;
+  font-family: 'Quicksand', sans-serif;
+  color: #eb2f54;
+}
+.information strong {
+  margin: 0.3125rem 0;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+}
+*[data-tooltip] {
+  white-space: nowrap;
+  cursor: help;
+  font-weight: bold;
+}
+#tooltip {
+  background-color: #222;
+  color: #ffffff;
+  padding: 0.3125rem 0.9375rem;
+  display: none;
+  white-space: nowrap;
+  text-align: center;
+  -webkit-border-radius: 0.1875rem;
+  -moz-border-radius: 0.1875rem;
+  border-radius: 0.1875rem;
+  position: absolute;
+}
+#tooltip .arrow {
+  background-color: #222;
+  position: absolute;
+  margin-left: -0.3125rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  bottom: -0.3125rem;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border: 1px solid transparent;
+  -webkit-border-radius: 0.1875rem;
+  -moz-border-radius: 0.1875rem;
+  border-radius: 0.1875rem;
 }

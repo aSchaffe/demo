@@ -1,0 +1,36 @@
+*[data-tooltip] {
+  white-space: nowrap;
+  cursor: help;
+  font-weight: bold;
+}
+
+#tooltip {
+  background-color: @gray-darker;
+  color: @whiteColor;
+  padding: 0.3125rem 0.9375rem;
+  display: none;
+  white-space: nowrap;
+  text-align: center;
+  -webkit-border-radius: 0.1875rem;
+  -moz-border-radius: 0.1875rem;
+  border-radius: 0.1875rem;
+  position: absolute;
+
+  & .arrow {
+    background-color: @gray-darker;
+    position: absolute;
+    margin-left: -0.3125rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    bottom: -0.3125rem;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: 1px solid transparent;
+    -webkit-border-radius: 0.1875rem;;
+    -moz-border-radius: 0.1875rem;;
+    border-radius: 0.1875rem;;
+  }
+}
