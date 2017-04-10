@@ -297,7 +297,6 @@ $(function () {
 
 
     //Start Kraeuter-Bar
-
     var counter = 0;
 
     //Event-Handler für die Icons
@@ -311,8 +310,8 @@ $(function () {
         counter++;
 
         var $self = $(this);
-        var $dataAttr = $self.attr('data-name');
-        var url = 'json/' + $dataAttr + '.json';
+        var dataAttr = $self.attr('data-name');
+        var url = 'json/herbs.json';
         var title = '.information h3';
         var times = '.information strong';
         var description = '.information p';
@@ -321,11 +320,15 @@ $(function () {
 
         function jsonGet() {
             $.getJSON(url, function (data) {
-                $(title).text(data.herbs);
-                $(times).text(data.subdescription);
-                $(description).text(data.description);
-                $(images).attr('src', 'files/img/herbs/large/' + data.bild);
+                $.each([dataAttr], function (i, items) {
+                    $.each(data[items], function (index, item) {
+                        $(title).text(item.herbs);
+                        $(times).text(item.subdescription);
+                        $(description).text(item.description);
+                        $(images).attr('src', 'files/img/herbs/large/' + item.bild);
+                    });
 
+                });
             })
                 .fail(function (jqXHR, status, error) {
                     $(description).html('Upps hier ist was falsch: ' + jqXHR.status + ' ' + error).show();

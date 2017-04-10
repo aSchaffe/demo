@@ -3,7 +3,7 @@
  */
 $(function () {
     //Alle Hyperlinks auswählen und mit einem mouseover versehen
-    $('[data-tooltip]').on('mouseenter' , function ( e ) {
+    $('.icon [data-tooltip]').on('mouseenter' , function ( e ) {
         var $self   = $(this);
         var titel   = $self.attr('data-tooltip');
         var $target = $(e.target);
@@ -35,13 +35,13 @@ $(function () {
 
         //Position  X von Link + Breite Quickinfo größer als window Breite dann Ausrichtung rechtsbündig
         (x + tooltipWidth) > bodyWidth ? x = Math.round(bodyWidth - tooltipWidth) : x = (Math.round(pos.left)) - halfWidth;
-        if ( x <= $('.icon').offset().left ) {
-            x = Math.round($('.icon').offset().left);
+        if ( x <= $(body).offset().left ) {
+            x = Math.round($(body).offset().left);
         }
 
         $(tooltip).css({
             left: x + 'px' ,
-            top: (y - ($(tooltip).height())) + 'px'
+            top: (y - $(tooltip).height()) + 'px'
         }).finish()
             .fadeIn(200);
 
