@@ -1722,6 +1722,9 @@ Copyright Axel Schaffrath
     width: auto;
   }
 }
+.bounce {
+  display: none;
+}
 @media all and (min-width: 881px) {
   .slideanim,
   .slide-more {
@@ -1927,6 +1930,7 @@ Copyright Axel Schaffrath
     -webkit-font-smoothing: antialiased;
   }
   .bounce {
+    display: block;
     position: absolute;
     bottom: 1.875rem;
     left: 50%;
@@ -2084,51 +2088,68 @@ nav ul li ul li a {
 .fixed-nav nav ul li ul {
   background-color: #ffffff;
 }
-.content {
-  text-align: left;
-  border: 1px solid #51515D;
-  overflow: hidden;
-  margin-bottom: 2.5rem;
-  margin-top: 2.5rem;
+#herbs {
+  display: none;
 }
-.icon {
-  background-color: #ffffff;
-}
-.icon ul {
-  overflow: hidden;
-  border-bottom: 1px solid #51515D;
-  margin-bottom: 0;
-}
-.icon img {
-  cursor: pointer;
-}
-.image {
-  width: 25%;
-  float: left;
-  padding-left: 2rem;
-  padding-top: 2rem;
-  padding-right: 2rem;
-}
-.information {
-  padding: 2.5rem;
-  width: 75%;
-  float: left;
-  background-color: #eee;
-}
-.information h3 {
-  font-size: 3rem;
-  margin: 0 0 0.3125rem 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 300;
-  line-height: 3.375rem;
-  font-family: 'Quicksand', sans-serif;
-  color: #eb2f54;
-}
-.information strong {
-  margin: 0.3125rem 0;
-  font-size: 1.125rem;
-  line-height: 1.6875rem;
+@media all and (min-width: 881px) {
+  #herbs {
+    display: block;
+  }
+  #herbs .content {
+    text-align: left;
+    border: 1px solid #51515D;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+  }
+  #herbs .content-container {
+    background-color: #eee;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2.5rem;
+  }
+  #herbs .content-container .image {
+    width: 25%;
+    float: left;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    margin-bottom: -100vh;
+    padding-bottom: 100vh;
+    background-color: #ffffff;
+  }
+  #herbs .content-container .information {
+    padding: 2.5rem 2.5rem 100vh 2.5rem;
+    width: 75%;
+    float: left;
+    margin-bottom: -100vh;
+  }
+  #herbs .content-container .information h3 {
+    font-size: 3rem;
+    margin: 0 0 0.3125rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 3.375rem;
+    font-family: 'Quicksand', sans-serif;
+    color: #eb2f54;
+  }
+  #herbs .content-container .information strong {
+    margin: 0.3125rem 0;
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+  }
+  #herbs .icon {
+    background-color: #ffffff;
+  }
+  #herbs .icon ul {
+    overflow: hidden;
+    border-bottom: 1px solid #51515D;
+    margin-bottom: 0;
+  }
+  #herbs .icon img {
+    cursor: pointer;
+  }
 }
 *[data-tooltip] {
   white-space: nowrap;

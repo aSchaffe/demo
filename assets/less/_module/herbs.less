@@ -1,53 +1,73 @@
-.content {
-  text-align: left;
-  border: 1px solid @lilaColor;
-  overflow: hidden;
-  margin-bottom: 2.5rem;
-  margin-top: 2.5rem;
+#herbs {
+  display: none;
 }
 
-.icon {
-  background-color: @whiteColor;
+@media all and (min-width: 881px) {
+  #herbs {
+    display: block;
 
-  & ul {
-    overflow: hidden;
-    border-bottom: 1px solid @lilaColor;
-    margin-bottom: 0;
-  }
+    & .content {
+      text-align: left;
+      border: 1px solid @lilaColor;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      margin-top: 2.5rem;
 
-  & img {
-    cursor: pointer;
-  }
-}
+      &-container {
+        background-color: @gray-lighter;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 2.5rem;
 
-.image {
-  width: 25%;
-  float: left;
-  padding-left: 2rem;
-  padding-top: 2rem;
-  padding-right: 2rem;
-}
+        & .image {
+          width: 25%;
+          float: left;
+          padding-left: 2rem;
+          padding-top: 2rem;
+          padding-right: 2rem;
+          margin-bottom: -100vh;
+          padding-bottom: 100vh;
+          background-color: @whiteColor;
+        }
 
-.information {
-  padding: 2.5rem;
-  width: 75%;
-  float: left;
-  background-color: @gray-lighter;
+        .information {
+          padding: 2.5rem 2.5rem 100vh 2.5rem;
+          width: 75%;
+          float: left;
+          margin-bottom: -100vh;
 
-  & h3 {
-    font-size: 3rem;
-    margin: 0 0 0.3125rem 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 300;
-    line-height: 3.375rem;
-    font-family: @secondFontFace;
-    color: @redColor;
-  }
+          & h3 {
+            font-size: 3rem;
+            margin: 0 0 0.3125rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 300;
+            line-height: 3.375rem;
+            font-family: @secondFontFace;
+            color: @redColor;
+          }
 
-  & strong {
-    margin: 0.3125rem 0;
-    font-size: @base-font-size-large;
-    line-height: @baseLineHeight-large;
+          & strong {
+            margin: 0.3125rem 0;
+            font-size: @base-font-size-large;
+            line-height: @baseLineHeight-large;
+          }
+        }
+      }
+    }
+
+    & .icon {
+      background-color: @whiteColor;
+
+      & ul {
+        overflow: hidden;
+        border-bottom: 1px solid @lilaColor;
+        margin-bottom: 0;
+      }
+
+      & img {
+        cursor: pointer;
+      }
+    }
   }
 }

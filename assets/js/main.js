@@ -318,6 +318,7 @@ $(function () {
         var images = '.image img';
         var $imgWidth = $('.image').innerWidth();
 
+
         function jsonGet() {
             $.getJSON(url, function (data) {
                 $.each([dataAttr], function (i, items) {
@@ -340,7 +341,7 @@ $(function () {
             counter--;
             setTimeout(function () {
                 $(information).animate({
-                    opacity: 0
+                   opacity: 0
                 }, {
                     duration: 700,
                     easing: 'swing'
@@ -348,7 +349,7 @@ $(function () {
             }, 300);
             $(images).parent()
                 .animate({
-                    'margin-left': -$imgWidth
+                    'margin-left': -$imgWidth * 2
                 }, {
                     duration: 500,
                     easing: 'swing',
@@ -362,7 +363,7 @@ $(function () {
                         setTimeout(function () {
                             jsonGet();
                             $(images).parent().css({
-                                'margin-left': -$imgWidth
+                                'margin-left': -$imgWidth * 2
                             })
                                 .animate({
                                     'margin-left': 0
