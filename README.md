@@ -5,7 +5,7 @@
 #### Sticky navbar javascript with soft scroll to anchor
 
 ## Mobile Menue
-#### jQuery mobile menue
+#### jQuery PlugIn mobile menue
 * Animate sub-menue
 * Animate dark background
 
