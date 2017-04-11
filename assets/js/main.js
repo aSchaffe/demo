@@ -176,7 +176,7 @@ $(function () {
         };
         $(nav).find('ul').eq(0).css({
             left: $(window).width() / 2 + 'px',
-            'margin-left': Math.round(-($(nav).find('ul').eq(0).width()), 0) / 2 + 'px'
+            'margin-left': Math.round(-($(nav).find('ul').eq(0).width())) / 2 + 'px'
         });
 
         $(navElements.ul).hide();

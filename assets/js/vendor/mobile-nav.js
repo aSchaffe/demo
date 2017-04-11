@@ -1,7 +1,7 @@
 /**
  * Created by axelschaffrath on 10.03.17.
  */
-(function ( $ , document ) {
+(function ( $ ) {
     ////////////////////////////////////////////
     //begin configuration off basic nav-elements
     $.fn.mobilMenue = function () {
@@ -68,7 +68,7 @@
                         opacity: 'toggle' ,
                         height: 'toggle'
                     } , {
-                        duration: 300 ,
+                        duration: 500 ,
                         easing: 'swing' ,
                         complete: function () {
                             if ( $(this).is(':hidden') ) {
@@ -99,7 +99,7 @@
                         })
                         .animate({
                             opacity: 0.45
-                        } , 300);
+                        } , 500);
                 } ,
                 //set close nav
                 open: function () {
@@ -128,7 +128,7 @@
                         .animate({
                             left: 0
                         } , {
-                            duration: 300 ,
+                            duration: 500 ,
                             easing: 'swing'
                         });
 
@@ -158,7 +158,7 @@
                         return false;
                     });
 
-                    $(mobilBtn).on('click' , function () {
+                    $(mobilBtn).on('touchstart click' , function () {
                         var $self = $(this);
 
                         $navSetting.open();
@@ -169,11 +169,11 @@
                 //set close nav
                 close: function () {
                     var $menueBg  = '.menue-bg';
-                    var $menueBtn = 'button';
+                    var $menueBtn = '.menue-header button';
                     var $self     = $('.menue-header, .menue-bg');
 
                     $.each($self , function ( i , elem ) {
-                        $(this).on('click' , function ( e ) {
+                        $(this).on('touchstart click' , function ( e ) {
                             var $target = $(e.target);
                             if ( $target.is($menueBtn) || $target.is($menueBg) ) {
                                 closeNav();
@@ -187,8 +187,7 @@
                             .animate({
                                 opacity: 0
                             } , {
-                                duration: 300 ,
-                                easing: 'swing' ,
+                                duration: 500,
                                 complete: function () {
                                     slideSub($('.mobil-nav ul'));
                                     $(this)
@@ -202,10 +201,10 @@
                         $('.mobil-nav')
                             .finish()
                             .animate({
-                                left: -navWidht ,
-                                opacity: 'toggle'
+                                left: -navWidht
+                               // opacity: 'toggle'
                             } , {
-                                duration: 300 ,
+                                duration: 500 ,
                                 easing: 'swing' ,
                                 complete: function () {
                                     $(this).removeClass('is-active').addClass('is-hidden');
@@ -226,4 +225,4 @@
         //////////////////////////////////////////
         return $navSetting.start();
     };
-})(jQuery , document);
+})(jQuery);

@@ -2153,7 +2153,7 @@ Copyright Axel Schaffrath
     cursor: pointer;
   }
 }
-*[data-tooltip] {
+#herbs *[data-tooltip] {
   white-space: nowrap;
   cursor: help;
   font-weight: bold;
@@ -2222,11 +2222,11 @@ Copyright Axel Schaffrath
     padding-left: 0.9375rem;
     padding-top: 3px;
     padding-bottom: 3px;
-    -webkit-transition: all 0.5s ease-in-out 0s;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -ms-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.5s ease-in-out 0s;
-    transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.25s ease-in-out 0s;
+    -moz-transition: all 0.25s ease-in-out 0s;
+    -ms-transition: all 0.25s ease-in-out 0s;
+    -o-transition: all 0.25s ease-in-out 0s;
+    transition: all 0.25s ease-in-out 0s;
   }
   nav.mobil-nav li:last-child {
     border-bottom: 0 none;
@@ -2239,6 +2239,10 @@ Copyright Axel Schaffrath
   nav.mobil-nav li.active > a {
     background-color: #424242;
     color: #ffffff;
+  }
+  nav.mobil-nav li.hidden > a {
+    background-color: transparent;
+    color: #424242;
   }
   nav.mobil-nav .level-2 {
     display: none;
@@ -2254,6 +2258,10 @@ Copyright Axel Schaffrath
   nav.mobil-nav .level-2 .active > a,
   nav.mobil-nav .level-2 a:hover {
     background-color: #777;
+  }
+  nav.mobil-nav .level-2 .hidden > a {
+    background-color: #ffffff;
+    color: #424242;
   }
   nav.mobil-nav .level-3 {
     display: none;
