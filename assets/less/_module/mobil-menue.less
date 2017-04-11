@@ -49,15 +49,16 @@
         font-size: 1.225rem;
       }
 
-      & a:hover,
-      &.active > a {
-        background-color: @gray;
-        color: @whiteColor;
-      }
-
-      &.hidden > a {
+      &.hidden > a{
         background-color : transparent;
         color: @gray;
+      }
+
+      & a:hover,
+      &.active > a,
+      &.hidden > a:hover {
+        background-color: @gray;
+        color: @whiteColor;
       }
     }
 
@@ -74,14 +75,15 @@
         }
       }
 
-      & .active > a,
-      & a:hover {
-        background-color: @gray-light;
-      }
-
       & .hidden > a {
         background-color : @whiteColor;
         color: @gray;
+      }
+
+      & .active > a,
+      & a:hover,
+      & .hidden > a:hover{
+        background-color: @gray-light;
       }
     }
 
