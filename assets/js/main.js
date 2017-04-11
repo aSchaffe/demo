@@ -45,7 +45,7 @@ $(function () {
             $(slider).each(function () {
                 var pos = $(this).offset().top;
                 var winTop = $(window).scrollTop();
-                if (pos < winTop + $('#mainnav').height() + 50) {
+                if (pos < winTop + $('#mainnav').height() + 600) {
                     slideIn(slider);
                     setTimeout(function () {
                         $('div.bounce').remove();
@@ -345,7 +345,7 @@ $(function () {
             counter--;
             setTimeout(function () {
                 $(information).animate({
-                   opacity: 0
+                    opacity: 0
                 }, {
                     duration: 700,
                     easing: 'swing'
