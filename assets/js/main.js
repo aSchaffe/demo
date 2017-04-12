@@ -32,7 +32,7 @@ $(function () {
     function getItem(inner) {
         return function () {
             outputFunction(inner);
-        }
+        };
     }
 
     $(window).on('scroll', getItem('<p>Weitere Bilder werden mit der Methode <strong>$.get()</strong> sowie <strong>$.getJSON()</strong> beim Click des Buttons geladen.</p>'));

@@ -205,7 +205,7 @@
                         c.fadeOut(300 , 'swing').remove();
                     }
                 }
-            }
+            };
         })();
         //End basic configuration off nav-elements
         //////////////////////////////////////////
