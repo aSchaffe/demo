@@ -12,7 +12,7 @@ $(function () {
 
         if ( !$('div').is('#tooltip') ) {
             $('<div></div>')
-                .attr('id', 'tooltip')
+                .attr('id' , 'tooltip')
                 .appendTo('body');
         }
 
@@ -25,20 +25,24 @@ $(function () {
 
         //Position des a Elements im Dokument (auf der Seite)
         var pos          = $target.offset();
-        var x            = e.target.offsetLeft;
+        var x            = Math.round(pos.left);
         var y            = Math.round(pos.top);
         var targetWidth  = Math.round($target.outerWidth());
         var tooltipWidth = Math.round($(tooltip).outerWidth());
         var halfWidth    = (tooltipWidth - targetWidth) / 2;
-        var body         = 'body';
+        var body         = '.content.grid';
         var bodyWidth    = $(body).width();
+        var divWidth     = Math.round($(body).offset().left);
 
         //Position  X von Link + Breite Quickinfo größer als window Breite dann Ausrichtung rechtsbündig
-        (x + tooltipWidth) > bodyWidth ? x = Math.round(bodyWidth - tooltipWidth) : x = (Math.round(pos.left)) - halfWidth;
-        if ( x <= $(body).offset().left ) {
-            x = Math.round($(body).offset().left);
+        if ( ((x + tooltipWidth) - divWidth) > bodyWidth ) {
+            x = Math.round((divWidth + bodyWidth) - tooltipWidth);
+        } else {
+            x = (Math.round(pos.left)) - halfWidth;
         }
-
+        if ( x <= $(body).offset().left ) {
+            x = Math.round($(body).offset().left + 1);
+        }
         $(tooltip).css({
             left: x + 'px' ,
             top: (y - $(tooltip).height()) + 'px'
@@ -50,7 +54,7 @@ $(function () {
 
         $self.on('mouseleave' , function () {
 
-            if ($self.is('a, img')) {
+            if ( $self.is('a, img') ) {
                 $self.attr('title' , $(tooltip).text());
             }
             $(tooltip).fadeOut(200 , function () {

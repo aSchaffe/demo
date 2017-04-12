@@ -7,13 +7,16 @@
 #tooltip {
   background-color: @borderColor-grey;
   color: @whiteColor;
-  padding: 0.3125rem 0.9375rem;
+  padding: (0.3125rem * 2) 0.9375rem;
   display: none;
   text-align: center;
   -webkit-border-radius: 0.1875rem;
   -moz-border-radius: 0.1875rem;
   border-radius: 0.1875rem;
   position: absolute;
+  max-width: 9.375rem;
+  font-size: @base-font-size-lighter;
+  line-height: @baseLineHeight-lighter;
 
   & .arrow {
     background-color: @borderColor-grey;

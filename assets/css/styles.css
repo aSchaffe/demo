@@ -2161,13 +2161,16 @@ Copyright Axel Schaffrath
 #tooltip {
   background-color: #424242;
   color: #ffffff;
-  padding: 0.3125rem 0.9375rem;
+  padding: 0.625rem 0.9375rem;
   display: none;
   text-align: center;
   -webkit-border-radius: 0.1875rem;
   -moz-border-radius: 0.1875rem;
   border-radius: 0.1875rem;
   position: absolute;
+  max-width: 9.375rem;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
 }
 #tooltip .arrow {
   background-color: #424242;
