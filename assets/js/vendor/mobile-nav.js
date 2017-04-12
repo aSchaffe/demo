@@ -48,20 +48,6 @@
                         width: settings.width
                     });
                 } ,
-                ////set scroll function to top off all a.elements after click event
-                // scroll: function (selector) {
-                //     $mainNav.find($link).on('click', function () {
-                //         $navSetting.animations($(this).closest('ul'));
-                //         scrollTo(selector);
-                //     });
-                //     function scrollTo(to) {
-                //         scrolling(to);
-                //     }
-                // },
-                ////set scroll function to top of a.element with ul child after click event
-                // scrollSub: function (to) {
-                //     scrolling(to);
-                // },
                 //toggle function ul.element next level after click event off target a
                 animations: function ( e , elem , active , hidden ) {
                     elem.animate({
@@ -152,7 +138,7 @@
                     $subNavParent.addClass($state.hidden);
                     $subNav.find('li:has(ul)').addClass($state.hidden);
 
-                    $('ul li:has(ul) > a[href^="#"]').on('click' , function ( event ) {
+                    $('ul li:has(ul) > a').on('click' , function ( event ) {
                         $navSetting.animations(event , $(this).siblings() , $state.active , $state.hidden);
                         slideSub($(this).closest('ul'));
                         return false;

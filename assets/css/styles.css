@@ -2239,9 +2239,7 @@ Copyright Axel Schaffrath
     background-color: transparent;
     color: #424242;
   }
-  nav.mobil-nav li a:hover,
-  nav.mobil-nav li.active > a,
-  nav.mobil-nav li.hidden > a:hover {
+  nav.mobil-nav li.active > a {
     background-color: #424242;
     color: #ffffff;
   }
@@ -2260,10 +2258,9 @@ Copyright Axel Schaffrath
     background-color: #ffffff;
     color: #424242;
   }
-  nav.mobil-nav .level-2 .active > a,
-  nav.mobil-nav .level-2 a:hover,
-  nav.mobil-nav .level-2 .hidden > a:hover {
+  nav.mobil-nav .level-2 .active > a {
     background-color: #777;
+    color: #ffffff;
   }
   nav.mobil-nav .level-3 {
     display: none;
