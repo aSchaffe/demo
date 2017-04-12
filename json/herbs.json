@@ -19,7 +19,7 @@
     {
       "herbs": "Schnittlauch",
       "bild": "schnittlauch.jpg",
-      "subdescription": "Auch Basilie, Basilienkraut oder Königskraut genannt",
+      "subdescription": "Der Name ist Programm",
       "description": "Schnittlauch wird frisch oder tiefgefroren, wegen des geringen Aromas seltener getrocknet oder gefriergetrocknet verwendet und ist Bestandteil der fines herbes der französischen Küche. Als Küchengewürz geerntet werden nur die oberirdischen Röhrenblätter. Fein geschnitten wird er Salaten, Suppen, Eigerichten oder auch Mayonnaise zugefügt. Das Schnittlauchbrot – ein Butterbrot, reichlich belegt mit Schnittlauchröllchen – ist in Bayern und Österreich eine beliebte Komponente der Brotzeitplatte. Schnittlauch ist ein Bestandteil der Grünen Soße, sowohl nach der Frankfurter als auch der Kasseler Rezeptur, eines typischen Gerichts der deutschen Regionalküche, das sich besonders im hessischen Raum großer Beliebtheit erfreut."
     }
   ],
@@ -27,7 +27,7 @@
     {
       "herbs": "Kresse",
       "bild": "kresse.jpg",
-      "subdescription": "Auch Basilie, Basilienkraut oder Königskraut genannt",
+      "subdescription": "Kresse gilt auch als Alleskönner für die Gesundheit",
       "description": "Gartenkresse schmeckt roh leicht scharf, der Geschmack erinnert an Senf und Rettich, was am Gehalt an Senfölglycosiden liegt. In den Lebensmittelhandel gelangen und in der Küche verwendet werden vor allem die Keimlinge, die etwa eine Woche nach der Aussaat geerntet werden können."
     }
   ],
@@ -35,8 +35,8 @@
     {
       "herbs": "Dill",
       "bild": "dill.jpg",
-      "subdescription": "Auch Basilie, Basilienkraut oder Königskraut genannt",
-      "description": "Die frischen wie die getrockneten Blätter werden als Küchengewürz verwendet. Basilikum ist in der südeuropäischen, besonders der italienischen Küche eines der meist verwendeten Gewürze. Beim Trocknen ergeben sich allerdings Verluste des Aromas. Basilikum wird auch in der Fleischkonservenindustrie verwendet. Basilikummazerat und -destillat sind Bestandteil mancher Kräuterliköre. Das ätherische Öl wird in der Kosmetikindustrie für Duftmischungen eingesetzt.[6] Das feine Aroma der Blätter passt hervorragend zu Tomaten. Basilikum ist fast immer Bestandteil des Pestos und oft Auflage für Pizza. Aufgequollene Samen (Basil seeds) werden, ähnlich wie Mexikanische Chia, in manchen Modegetränken verwendet."
+      "subdescription": "Dill ist eines der meistangebauten Gewürze",
+      "description": "Gartendill ist eine vielseitig verwendete Gewürzpflanze. Er wird für Salate verwendet. In Saucen auf Grundlage von Salatöl, Joghurt, Quark und in Gewürzbutter ist Dill beliebt und als Brotaufstrich geeignet. Des Weiteren dient er auch zum Würzen von Fisch- und Fleischspeisen. Durch Destillation wird das Dillöl auch für die Likörindustrie angereichert. Frisch und getrocknet kann es auch für Konserven und für Kräuteressenzen verwendet werden. Blätter wie Blütendolden sind ein wichtiges Gewürz für Gewürzgurken, insbesondere für Salz-Dill-Gurken. Meist werden die Dillspitzen verwendet, in frischem, getrocknetem, tiefgefrorenem oder gefriergetrocknetem Zustand. Seltener wird das Dillkraut (das junge Kraut) oder die ganze oberirdische Pflanze verwendet. Das frische Dillkraut hat den besten Geschmack und wird auch auf gegarte Kartoffeln gestreut."
     }
   ],
   "oregano": [

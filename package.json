@@ -1,0 +1,25 @@
+{
+  "name": "demo website Axel Schaffrath",
+  "version": "0.0.1",
+  "description": "One small demo Website with nice jQuery PlugIn",
+  "main": [
+    "assets/js/main.js",
+    "assets/less/styles.less"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aSchaffe/demo.git"
+  },
+  "keywords": [
+    "tooltip",
+    "stick nav",
+    "modal box",
+    "mobile menue"
+  ],
+  "author": "Axel Schaffrath info@axel-schaffrath.de",
+  "license": "No License",
+  "bugs": {
+    "url": "https://github.com/aSchaffe/demo/issues"
+  },
+  "homepage": "https://github.com/aSchaffe/demo#readme"
+}
