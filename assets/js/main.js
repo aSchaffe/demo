@@ -4,6 +4,7 @@
  * @module:		gallery slider, stickynav, modal box
  * @license:	LGPL
  */
+/* jshint expr: true */
 
 $(function () {
     if ($(window).width() < 768) {
@@ -395,7 +396,7 @@ $(function () {
         });
 
         $(modalBox.layer).css('left', function () {
-            return Math.round(($(window).width() / 2 ) - ($(this).width() / 2), 0) + 'px'
+            return Math.round(($(window).width() / 2 ) - ($(this).width() / 2), 0) + 'px';
         });
 
         if ($(window).width() > 999) {
