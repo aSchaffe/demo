@@ -6,7 +6,6 @@ var changed = require('gulp-changed'),
     rename = require('gulp-rename'),
     clean = require('gulp-clean'),
     less = require('gulp-less'),
-    path = require('path'),
     browserSync = require('browser-sync').create(),
     watch = require('gulp-watch'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -31,9 +30,7 @@ gulp.task('less', function(){
 
 gulp.task('browserSync', function() {
     browserSync.init({
-        server: {
-            baseDir: 'assets'
-        }
+        proxy: 'http://192.168.0.8:8888'
     });
 });
 

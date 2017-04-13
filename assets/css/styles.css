@@ -103,7 +103,7 @@ a:active,
 a:hover {
   outline: 0;
   text-decoration: none;
-  color: #bb1233;
+  color: #eb2f54;
 }
 b,
 strong {
@@ -2094,9 +2094,6 @@ Copyright Axel Schaffrath
   display: none;
 }
 @media all and (min-width: 881px) {
-  #herbs {
-    display: block;
-  }
   #herbs .content {
     text-align: left;
     border: 1px solid #51515D;

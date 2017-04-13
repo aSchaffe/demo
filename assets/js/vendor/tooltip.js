@@ -33,7 +33,7 @@ $(function () {
         var body         = '.content.grid';
         var bodyWidth    = $(body).width();
         var divWidth     = Math.round($(body).offset().left);
-console.log(y);
+
         //Position  X von Link + Breite Quickinfo größer als window Breite dann Ausrichtung rechtsbündig
         if ( ((x + tooltipWidth) - divWidth) > bodyWidth ) {
             x = Math.round((divWidth + bodyWidth) - tooltipWidth);
