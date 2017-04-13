@@ -39,3 +39,6 @@ gulp.task('watch', ['browserSync' , 'less'], function(){
     gulp.watch('*.html', browserSync.reload);
     gulp.watch('assets/js/**/*.js', browserSync.reload);
 });
+
+gulp.task('build', ['less']);
+gulp.task('default', ['build']);
