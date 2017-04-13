@@ -4,20 +4,54 @@ var changed = require('gulp-changed'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    imagemin = require('gulp-imagemin'),
     clean = require('gulp-clean'),
     less = require('gulp-less'),
     path = require('path'),
+    browserSync = require('browser-sync').create(),
     watch = require('gulp-watch'),
-    cleanCSS = require('gulp-clean-css'),
     sourcemaps = require('gulp-sourcemaps'),
-    minifyhtml = require('gulp-minify-html'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifyCSS = require('gulp-minify-css');
+    runSequence = require('run-sequence'),
+    autoprefixer = require('gulp-autoprefixer');
 
 
 gulp.task('js', function () {
     return gulp.src(['gulpfile.js', 'assets/js/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
+});
+
+gulp.task('less', function(){
+    return gulp.src('assets/less/styles.less')
+        .pipe(less())
+        .pipe(gulp.dest('assets/css'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+});
+
+gulp.task('browserSync', function() {
+    browserSync.init({
+        server: {
+            baseDir: 'assets'
+        }
+    });
+});
+
+gulp.task('watch', ['browserSync' , 'less'], function(){
+    gulp.watch('assets/less/**/*.less', ['less'])
+    gulp.watch('assets/js/**/*.js', browserSync.reload);
+});
+
+gulp.task('default', function (callback) {
+    runSequence(['less','browserSync'], 'watch',
+        callback
+    )
+});
+
+gulp.task('build', function(callback) {
+    runSequence(
+        'clean:assets',
+        'less',
+        callback
+    )
 });

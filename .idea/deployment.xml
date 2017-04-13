@@ -10,6 +10,7 @@
           <excludedPaths>
             <excludedPath path="/site" />
             <excludedPath path="/dev.axel-schaffrath.de/site" />
+            <excludedPath path="/dev.axel-schaffrath.de/node_modules" />
           </excludedPaths>
         </serverdata>
       </paths>
