@@ -25,7 +25,7 @@ gulp.task('less', function(){
         .pipe(gulp.dest('assets/css'))
         .pipe(browserSync.reload({
             stream: true
-        }))
+        }));
 });
 
 gulp.task('browserSync', function() {
