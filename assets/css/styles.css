@@ -2094,11 +2094,13 @@ Copyright Axel Schaffrath
   display: none;
 }
 @media all and (min-width: 881px) {
+  #herbs {
+    display: block;
+  }
   #herbs .content {
     text-align: left;
     border: 1px solid #51515D;
     overflow: hidden;
-    margin-bottom: 2.5rem;
     margin-top: 2.5rem;
   }
   #herbs .content-container {
