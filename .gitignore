@@ -1,9 +1,4 @@
-*~
-*.swp
-.DS_Store
-*.swo
 node_modules/
-.sass-cache/
 npm-debug.log
 .idea/workspace.xml
 gulpfile.js
