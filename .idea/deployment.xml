@@ -11,6 +11,7 @@
             <excludedPath path="/site" />
             <excludedPath path="/dev.axel-schaffrath.de/site" />
             <excludedPath path="/dev.axel-schaffrath.de/node_modules" />
+            <excludedPath path="/dev.axel-schaffrath.de/gulpfile.js" />
           </excludedPaths>
         </serverdata>
       </paths>

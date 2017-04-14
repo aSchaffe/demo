@@ -30,7 +30,7 @@ gulp.task('less', function(){
 
 gulp.task('browserSync', function() {
     browserSync.init({
-        proxy: 'http://192.168.0.8:8888'
+        proxy: 'http://192.168.0.9:8888'
     });
 });
 
