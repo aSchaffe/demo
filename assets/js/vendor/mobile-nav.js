@@ -27,6 +27,7 @@
 
             function slideSub( up ) {
                 up.find('li.' + $state.active)
+                    .removeClass('open')
                     .removeClass($state.active)
                     .addClass($state.hidden)
                     .children('ul:visible')
@@ -50,6 +51,9 @@
                 } ,
                 //toggle function ul.element next level after click event off target a
                 animations: function ( e , elem , active , hidden ) {
+                    elem.parent()
+                        .removeClass('open')
+                        .addClass('open');
                     elem.animate({
                         opacity: 'toggle' ,
                         height: 'toggle'

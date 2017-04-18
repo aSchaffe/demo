@@ -2242,7 +2242,7 @@ Copyright Axel Schaffrath
     background-color: transparent;
     color: #424242;
   }
-  nav.mobil-nav li.active > a {
+  nav.mobil-nav li.open > a {
     background-color: #424242;
     color: #ffffff;
   }
