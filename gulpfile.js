@@ -8,6 +8,7 @@ var changed = require('gulp-changed'),
     less = require('gulp-less'),
     browserSync = require('browser-sync').create(),
     watch = require('gulp-watch'),
+    gutil = require('gulp-util'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer');
 
@@ -20,7 +21,10 @@ gulp.task('js', function () {
 
 gulp.task('less', function(){
     return gulp.src('assets/less/styles.less')
-        .pipe(less())
+        .pipe(less().on('error', function ( err ) {
+            gutil.log(err);
+            this.emit('end');
+        }))
         .pipe(gulp.dest('assets/css'))
         .pipe(browserSync.reload({
             stream: true
@@ -29,7 +33,7 @@ gulp.task('less', function(){
 
 gulp.task('browserSync', function() {
     browserSync.init({
-        proxy: 'http://localhost:80'
+        proxy: 'http://localhost'
     });
 });
 
