@@ -7,7 +7,7 @@ $(function () {
         var $self   = $(this);
         var titel   = $self.attr('data-tooltip');
         var $target = $(e.target);
-        var $tooltip = $('#tooltip');
+        var tooltip = '#tooltip';
         var arrow   = '.arrow';
 
         if ( !$('div').is('#tooltip') ) {
@@ -20,7 +20,7 @@ $(function () {
         if ( $self.attr('title') ) {
             $self.attr('title' , null);
         }
-        $tooltip.finish()
+        $(tooltip).finish()
             .html(titel + '<span class="arrow"></span>');
 
         //Position des a Elements im Dokument (auf der Seite)
@@ -28,7 +28,7 @@ $(function () {
         var x            = Math.round(pos.left);
         var y            = Math.round(pos.top);
         var targetWidth  = Math.round($target.outerWidth());
-        var tooltipWidth = Math.round($tooltip.outerWidth());
+        var tooltipWidth = Math.round($(tooltip).outerWidth());
         var halfWidth    = (tooltipWidth - targetWidth) / 2;
         var $body         = $('.content.grid');
         var bodyWidth    = $body.width();
@@ -43,21 +43,22 @@ $(function () {
         if ( x <= $body.offset().left ) {
             x = Math.round($body.offset().left + 1);
         }
-        $tooltip.css({
+        $(tooltip).css({
             left: x + 'px' ,
-            top: (y - ($tooltip.height() + ($target.height() / 4))) + 'px'
+            top: (y - ($(tooltip).height() + ($target.height() / 4))) + 'px'
         }).finish()
             .fadeIn(200);
 
-        $(arrow).css('left' , (Math.round($target.offset().left)) - $tooltip.offset().left + ( targetWidth / 2 ) + 'px')
+        $(arrow).css('left' , (Math.round($target.offset().left)) - $(tooltip).offset().left + ( targetWidth / 2 ) + 'px')
             .fadeIn(200);
+       // console.log($('#tooltip').offset().left);
 
         $self.on('mouseleave' , function () {
 
             if ( $self.is('a, img') ) {
-                $self.attr('title' , $tooltip.text());
+                $self.attr('title' , $(tooltip).text());
             }
-            $tooltip.fadeOut(200 , function () {
+            $(tooltip).fadeOut(200 , function () {
                 $(this).html(null)
                     .css({
                         left: '' ,
