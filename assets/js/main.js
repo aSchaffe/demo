@@ -46,10 +46,10 @@ $(function () {
                 var winTop = $(window).scrollTop();
                 if ( pos < winTop + $('#mainnav').height() + 600 ) {
                     slideIn(slider);
-                    setTimeout(function () {
+                    setTimeout(() => {
                         $('div.bounce').remove();
                     } , 300);
-                    setTimeout(function () {
+                    setTimeout(() => {
                         $('.gallery__copy-text-inner').addClass('is-acitve');
                     } , 1000);
                 }
@@ -219,7 +219,7 @@ $(function () {
     function slideModalBox( modal , modalbg ) {
         $(modal).fadeOut(500);
         $(modalbg).fadeOut(500);
-        setTimeout(function () {
+        setTimeout(() => {
             modalbg.remove();
             $(modal).removeClass('is-active');
         } , 700);
@@ -319,7 +319,7 @@ $(function () {
         if ( counter > 1 ) {
             var information = '.information';
             counter--;
-            setTimeout(function () {
+            setTimeout(() => {
                 $(information).animate({
                     opacity: 0
                 } , {
@@ -340,7 +340,7 @@ $(function () {
                             duration: 500 ,
                             easing: 'swing'
                         });
-                        setTimeout(function () {
+                        setTimeout(() => {
                             jsonGet();
                             $(images).parent().css({
                                 'margin-left': -$imgWidth * 2
