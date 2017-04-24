@@ -1,23 +1,23 @@
 const gulp = require( 'gulp' );
-const changed     = require( 'gulp-changed' ),
-  //  jshint      = require( 'gulp-jshint' ),
-    concat      = require( 'gulp-concat' ),
-    uglify      = require( 'gulp-uglify' ),
-    rename      = require( 'gulp-rename' ),
-    clean       = require( 'gulp-clean' ),
-    less        = require( 'gulp-less' ),
-    browserSync = require( 'browser-sync' ).create(),
-    watch       = require( 'gulp-watch' ),
-    gutil       = require( 'gulp-util' );
-//   sourcemaps = require('gulp-sourcemaps'),
-// autoprefixer = require('gulp-autoprefixer');
+const changed      = require( 'gulp-changed' ),
+      jshint       = require( 'gulp-jshint' ),
+      concat       = require( 'gulp-concat' ),
+      uglify       = require( 'gulp-uglify' ),
+      rename       = require( 'gulp-rename' ),
+      clean        = require( 'gulp-clean' ),
+      less         = require( 'gulp-less' ),
+      browserSync  = require( 'browser-sync' ).create(),
+      watch        = require( 'gulp-watch' ),
+      gutil        = require( 'gulp-util' ),
+      sourcemaps   = require( 'gulp-sourcemaps' ),
+      autoprefixer = require( 'gulp-autoprefixer' );
 
 
-//gulp.task( 'js', function () {
-//    return gulp.src( [ 'gulpfile.js', 'assets/js/**/*.js' ] )
-//        .pipe( jshint() )
-//        .pipe( jshint.reporter( 'default' ) );
-//} );
+gulp.task( 'js', function () {
+    return gulp.src( [ 'gulpfile.js', 'assets/js/**/*.js' ] )
+        .pipe( jshint() )
+        .pipe( jshint.reporter( 'default' ) );
+} );
 
 gulp.task( 'less', function () {
     return gulp.src( 'assets/less/styles.less' )
