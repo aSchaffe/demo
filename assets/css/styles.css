@@ -1519,6 +1519,8 @@ Copyright Axel Schaffrath
   .gallery__first,
   .gallery__last {
     overflow: visible;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .gallery__first figure,
   .gallery__last figure {
