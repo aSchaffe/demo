@@ -19,7 +19,7 @@ var Tooltip = (function ( window , document , undefined ) {
         display: 'block'
     };
 
-    // read and clear title anchor
+    // initial tooltop box after mouse event
     var _init = function ( selector ) {
         var anchor = document.querySelectorAll(selector);
         for ( var i = 0 ; i < anchor.length ; i++ ) {
@@ -44,7 +44,7 @@ var Tooltip = (function ( window , document , undefined ) {
         return { x: x , y: y };
     }
 
-    // fade out tooltip box after mouseout event
+    // set fade out tooltip box
     function fadeOut( elem ) {
         if ( _thisTooltip ) {
             var op    = 1;  // initial opacity
@@ -63,7 +63,7 @@ var Tooltip = (function ( window , document , undefined ) {
         }
     }
 
-    // fade in tooltip box after mouseover event
+    // set fade in tooltip box
     function fadeIn( elem ) {
         var op    = 0;
         var timer = setInterval(function () {
@@ -78,7 +78,7 @@ var Tooltip = (function ( window , document , undefined ) {
         });
     }
 
-    // build new tooltip box if it is not avalible
+    // build and fade in tooltip box
     var _tooltiptooltip = function ( selector ) {
         if ( _thisTooltip ) {
             _thisTooltip.remove();
@@ -104,7 +104,7 @@ var Tooltip = (function ( window , document , undefined ) {
     };
 
 
-    // finish tooltip box get calculate and set x and y position
+    // finish tooltip box get, calculate and set x and y position
     var _tooltipShow = function ( event ) {
         _target         = event.target;
         var targetTitle = _target.getAttribute('title') ,
