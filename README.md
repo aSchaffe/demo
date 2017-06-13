@@ -14,8 +14,10 @@
 
 
 ## Tooltips
+### pure JavaScript
+* intial with Tooltip.init('[data-tooltip]');`
 ### jQuery tooltips with left and right float
-* Animate slideIn slideOut
+* Animate slideIn ``
 * Center arrow and border-radius
 
 
