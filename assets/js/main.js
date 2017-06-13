@@ -8,7 +8,7 @@
 
 $(function () {
 
-    Tooltip.init('[data-tooltip]');
+    Tooltip.init('.icon [data-tooltip]');
 
     if ( $(window).width() < 768 ) {
         $(document).mobilMenue();
