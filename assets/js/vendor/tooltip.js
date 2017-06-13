@@ -2,13 +2,14 @@
  * Created by Axel Schaffrath on 02.06.2017.
  */
 var Tooltip = (function ( window , document , undefined ) {
-    //set private variable
+    // set private variable
     var _selector = 'tooltip' ,
         _thisTooltip ,
         _targetText ,
         _targetData ,
         _target;
 
+    // set init default css
     var _defaults = {
         left: 'auto' ,
         top: 'auto' ,
@@ -18,7 +19,7 @@ var Tooltip = (function ( window , document , undefined ) {
         display: 'block'
     };
 
-    //read and clear title anchor
+    // read and clear title anchor
     var _init = function ( selector ) {
         var anchor = document.querySelectorAll(selector);
         for ( var i = 0 ; i < anchor.length ; i++ ) {
@@ -29,6 +30,7 @@ var Tooltip = (function ( window , document , undefined ) {
         }
     };
 
+    // get x and y position off elements
     function getPosition( elem ) {
         var x = 0 ,
             y = 0;
@@ -42,7 +44,7 @@ var Tooltip = (function ( window , document , undefined ) {
         return { x: x , y: y };
     }
 
-    // fade out
+    // fade out tooltip box after mouseout event
     function fadeOut( elem ) {
         if ( _thisTooltip ) {
             var op    = 1;  // initial opacity
@@ -61,9 +63,9 @@ var Tooltip = (function ( window , document , undefined ) {
         }
     }
 
-    // fade in
+    // fade in tooltip box after mouseover event
     function fadeIn( elem ) {
-        var op    = 0;  // initial opacity
+        var op    = 0;
         var timer = setInterval(function () {
             if ( op >= 1 ) {
                 clearInterval(timer);
@@ -76,7 +78,7 @@ var Tooltip = (function ( window , document , undefined ) {
         });
     }
 
-    //create new tooltip tooltip if it is not avalible
+    // build new tooltip box if it is not avalible
     var _tooltiptooltip = function ( selector ) {
         if ( _thisTooltip ) {
             _thisTooltip.remove();
@@ -102,6 +104,7 @@ var Tooltip = (function ( window , document , undefined ) {
     };
 
 
+    // finish tooltip box get calculate and set x and y position
     var _tooltipShow = function ( event ) {
         _target         = event.target;
         var targetTitle = _target.getAttribute('title') ,
@@ -120,34 +123,44 @@ var Tooltip = (function ( window , document , undefined ) {
         var tooltipWrap  = document.getElementById('tooltip-container');
         var wrapWidht    = Math.round(tooltipWrap.clientWidth);
 
+        // calculate left and top position
         if ( _thisTooltip ) {
+            // right position
+            // get and calculate target and tooltip element position if tooltip element position > wrapper width
             if ( ((getPosition(_target).x + tooltipWidth) - getPosition(tooltipWrap).x) > tooltipWrap.clientWidth ) {
                 x = Math.round((getPosition(tooltipWrap).x + wrapWidht) - tooltipWidth);
             } else {
+                // get target and tooltip element width for left position inside wrapper
                 x = getPosition(_target).x - halfWidth;
             }
 
+            // get and calculate top of target and tooltip position
             y = getPosition(_target).y - (_thisTooltip.clientHeight);
         }
 
         if ( x <= getPosition(tooltipWrap).x ) {
+            // left position
+            // get and calculate target and tooltip element position if tooltip element position < wrapper porsition
             x = Math.round(getPosition(tooltipWrap).x + 1);
         }
 
+        // set calculated left and top position
         tooltip.style.left = x + 'px';
         tooltip.style.top  = y + 'px';
 
+        // get, calculate and set position of arrow element
         var arrowPos        = document.getElementsByClassName('arrow')[0];
         arrowPos.style.left = Math.round((getPosition(_target).x - getPosition(_thisTooltip).x) + (targetWidth / 2)) + 'px';
     };
 
+    // after mouseout event set title back with target content - hide and delete tooltip div
     var _tooltipHide = function ( event ) {
         event.target.setAttribute('title' , _targetText);
         fadeOut(_thisTooltip);
     };
 
     return {
-        //set div tooltip for tooltip
+        // init finished build tooltip box
         init: _init
     };
 }(window , document));
