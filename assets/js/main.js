@@ -7,6 +7,9 @@
 /* jshint expr: true */
 
 $(function () {
+
+    Tooltip.init('[data-tooltip]');
+
     if ( $(window).width() < 768 ) {
         $(document).mobilMenue();
     }
