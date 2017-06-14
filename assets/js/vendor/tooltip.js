@@ -6,7 +6,7 @@ var Tooltip = (function ( window , document , undefined ) {
     var _selector = 'tooltip' ,
         _thisTooltip ,
         _targetText ,
-        _targetData ,
+        _targetSelector ,
         _target;
 
     // set init default css
@@ -41,13 +41,13 @@ var Tooltip = (function ( window , document , undefined ) {
             elem = elem.offsetParent;
         }
 
-        return { x: x , y: y };
+        return { x: parseInt(x, 10) , y: parseInt(y, 10) };
     }
 
     // set fade out tooltip box
     function fadeOut( elem ) {
         if ( _thisTooltip ) {
-            var op    = 1;  // initial opacity
+            var op    = 1;
             var timer = setInterval(function () {
                 if ( op <= 0 ) {
                     clearInterval(timer);
@@ -79,14 +79,14 @@ var Tooltip = (function ( window , document , undefined ) {
     }
 
     // build and fade in tooltip box
-    var _tooltiptooltip = function ( selector ) {
+    var _tooltip = function ( selector ) {
         if ( _thisTooltip ) {
             _thisTooltip.remove();
         }
-        if ( !document.getElementById(selector) ) {
+        if ( !document.getElementById(selector) && _targetSelector ) {
             var arrow   = document.createElement('span') ,
                 tooltip = document.createElement('div') ,
-                text    = document.createTextNode(_targetData) ,
+                text    = document.createTextNode(_targetSelector) ,
                 body    = document.querySelector('body');
 
             tooltip.appendChild(text);
@@ -103,28 +103,23 @@ var Tooltip = (function ( window , document , undefined ) {
         }
     };
 
-
     // finish tooltip box get, calculate and set x and y position
     var _tooltipShow = function ( event ) {
         _target         = event.target;
-        var targetTitle = _target.getAttribute('title') ,
-            targetData  = _target.getAttribute('data-tooltip');
-        _targetData     = targetData;
-        _targetText     = targetTitle;
-
-        _tooltiptooltip(_selector);
+        _targetSelector = _target.getAttribute('data-tooltip');
+        _targetText     = _target.getAttribute('title');
+        _tooltip(_selector);
         _thisTooltip = document.getElementById(_selector);
-
-        targetTitle ? _target.removeAttribute('title') : '';
-
-        var tooltipWidth = Math.round(_thisTooltip.clientWidth);
-        var targetWidth  = Math.round(_target.clientWidth);
-        var halfWidth    = (tooltipWidth - targetWidth) / 2;
-        var tooltipWrap  = document.getElementById('tooltip-container');
-        var wrapWidht    = Math.round(tooltipWrap.clientWidth);
+        _targetText ? _target.removeAttribute('title') : '';
 
         // calculate left and top position
         if ( _thisTooltip ) {
+            var tooltipWidth = Math.round(_thisTooltip.clientWidth);
+            var targetWidth  = Math.round(_target.clientWidth);
+            var halfWidth    = (tooltipWidth - targetWidth) / 2;
+            var tooltipWrap  = document.getElementById('tooltip-container');
+            var wrapWidht    = Math.round(tooltipWrap.clientWidth);
+
             // right position
             // get and calculate target and tooltip element position if tooltip element position > wrapper width
             if ( ((getPosition(_target).x + tooltipWidth) - getPosition(tooltipWrap).x) > tooltipWrap.clientWidth ) {
@@ -136,21 +131,22 @@ var Tooltip = (function ( window , document , undefined ) {
 
             // get and calculate top of target and tooltip position
             y = getPosition(_target).y - (_thisTooltip.clientHeight);
+
+            if ( x <= getPosition(tooltipWrap).x ) {
+                // left position
+                // get and calculate target and tooltip element position if tooltip element position < wrapper porsition
+                x = Math.round(getPosition(tooltipWrap).x + 1);
+            }
+
+            // set calculated left and top position
+            tooltip.style.left = x + 'px';
+            tooltip.style.top  = y + 'px';
+
+            // get, calculate and set position of arrow element
+            var arrowPos        = document.getElementsByClassName('arrow')[0];
+            arrowPos.style.left = Math.round((getPosition(_target).x - getPosition(_thisTooltip).x) + (targetWidth / 2)) + 'px';
         }
 
-        if ( x <= getPosition(tooltipWrap).x ) {
-            // left position
-            // get and calculate target and tooltip element position if tooltip element position < wrapper porsition
-            x = Math.round(getPosition(tooltipWrap).x + 1);
-        }
-
-        // set calculated left and top position
-        tooltip.style.left = x + 'px';
-        tooltip.style.top  = y + 'px';
-
-        // get, calculate and set position of arrow element
-        var arrowPos        = document.getElementsByClassName('arrow')[0];
-        arrowPos.style.left = Math.round((getPosition(_target).x - getPosition(_thisTooltip).x) + (targetWidth / 2)) + 'px';
     };
 
     // after mouseout event set title back with target content - hide and delete tooltip div
