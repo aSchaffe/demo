@@ -51,15 +51,13 @@ var Tooltip = (function ( window , document , undefined ) {
             var timer = setInterval(function () {
                 if ( op <= 0 ) {
                     clearInterval(timer);
-                    elem.style.display = 'none';
                     elem.remove();
-                    op = 0;
                 } else {
                     elem.style.opacity = op;
                     elem.style.filter  = 'alpha(opacity=' + op * 100 + ")";
-                    op -= 0.01;
+                    op -= 0.1;
                 }
-            });
+            }, 30);
         }
     }
 
@@ -69,13 +67,12 @@ var Tooltip = (function ( window , document , undefined ) {
         var timer = setInterval(function () {
             if ( op >= 1 ) {
                 clearInterval(timer);
-                op = 1;
             } else {
                 elem.style.opacity = op;
                 elem.style.filter  = 'alpha(opacity=' + op * 100 + ")";
-                op += 0.01;
+                op += 0.1;
             }
-        });
+        }, 10);
     }
 
     // build and fade in tooltip box
@@ -105,6 +102,7 @@ var Tooltip = (function ( window , document , undefined ) {
 
     // finish tooltip box get, calculate and set x and y position
     var _tooltipShow = function ( event ) {
+        event = event || window.event;
         _target         = event.target;
         _targetSelector = _target.getAttribute('data-tooltip');
         _targetText     = _target.getAttribute('title');
@@ -151,6 +149,7 @@ var Tooltip = (function ( window , document , undefined ) {
 
     // after mouseout event set title back with target content - hide and delete tooltip div
     var _tooltipHide = function ( event ) {
+        event = event || window.event;
         event.target.setAttribute('title' , _targetText);
         fadeOut(_thisTooltip);
     };
