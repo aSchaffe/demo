@@ -144,7 +144,6 @@ var Tooltip = (function ( window , document , undefined ) {
             var arrowPos        = document.getElementsByClassName('arrow')[0];
             arrowPos.style.left = Math.round((getPosition(_target).x - getPosition(_thisTooltip).x) + (targetWidth / 2)) + 'px';
         }
-
     };
 
     // after mouseout event set title back with target content - hide and delete tooltip div
