@@ -63,16 +63,18 @@ var Tooltip = (function (window, document, undefined) {
 
     // set fade in tooltip box
     function fadeIn(elem) {
-        var op = 0;
-        var timer = setInterval(function () {
-            if (op >= 1) {
-                clearInterval(timer);
-            } else {
-                elem.style.opacity = op;
-                elem.style.filter = 'alpha(opacity=' + op * 100 + ")";
-                op += 0.1;
-            }
-        }, 10);
+        setTimeout(function () {
+            var op = 0;
+            var timer = setInterval(function () {
+                if (op >= 1) {
+                    clearInterval(timer);
+                } else {
+                    elem.style.opacity = op;
+                    elem.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                    op += 0.1;
+                }
+            }, 10);
+        }, 200);
     }
 
     // build and fade in tooltip box
@@ -106,9 +108,9 @@ var Tooltip = (function (window, document, undefined) {
         _target = event.target;
         _targetSelector = _target.getAttribute('data-tooltip');
         _targetText = _target.getAttribute('title');
+        _targetText ? _target.removeAttribute('title') : '';
         _tooltip(_selector);
         _thisTooltip = document.getElementById(_selector);
-        _targetText ? _target.removeAttribute('title') : '';
 
         // calculate left and top position
         if (_thisTooltip) {
