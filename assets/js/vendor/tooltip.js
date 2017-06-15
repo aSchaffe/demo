@@ -1,60 +1,60 @@
 /**
  * Created by Axel Schaffrath on 02.06.2017.
  */
-var Tooltip = (function ( window , document , undefined ) {
+var Tooltip = (function (window, document, undefined) {
     // set private variable
-    var _selector = 'tooltip' ,
-        _thisTooltip ,
-        _targetText ,
-        _targetSelector ,
+    var _selector = 'tooltip',
+        _thisTooltip,
+        _targetText,
+        _targetSelector,
         _target;
 
     // set init default css
     var _defaults = {
-        left: 'auto' ,
-        top: 'auto' ,
-        opacity: 0 ,
-        zIndex: 9999 ,
-        position: 'absolute' ,
+        left: 'auto',
+        top: 'auto',
+        opacity: 0,
+        zIndex: 9999,
+        position: 'absolute',
         display: 'block'
     };
 
     // initial tooltop box after mouse event
-    var _init = function ( selector ) {
+    var _init = function (selector) {
         var anchor = document.querySelectorAll(selector);
-        for ( var i = 0 ; i < anchor.length ; i++ ) {
-            anchor[i].addEventListener('focus' , _tooltipShow , false);
-            anchor[i].addEventListener('mouseover' , _tooltipShow , false);
-            anchor[i].addEventListener('blur' , _tooltipHide , false);
-            anchor[i].addEventListener('mouseout' , _tooltipHide , false);
+        for (var i = 0; i < anchor.length; i++) {
+            anchor[i].addEventListener('focus', _tooltipShow, false);
+            anchor[i].addEventListener('mouseover', _tooltipShow, false);
+            anchor[i].addEventListener('blur', _tooltipHide, false);
+            anchor[i].addEventListener('mouseout', _tooltipHide, false);
         }
     };
 
     // get x and y position off elements
-    function getPosition( elem ) {
-        var x = 0 ,
+    function getPosition(elem) {
+        var x = 0,
             y = 0;
 
-        while ( elem != null && (elem.tagName || '').toLowerCase() != 'html' ) {
+        while (elem != null && (elem.tagName || '').toLowerCase() != 'html') {
             x += elem.offsetLeft || 0;
             y += elem.offsetTop || 0;
             elem = elem.offsetParent;
         }
 
-        return { x: parseInt(x, 10) , y: parseInt(y, 10) };
+        return {x: parseInt(x, 10), y: parseInt(y, 10)};
     }
 
     // set fade out tooltip box
-    function fadeOut( elem ) {
-        if ( _thisTooltip ) {
-            var op    = 1;
+    function fadeOut(elem) {
+        if (_thisTooltip) {
+            var op = 1;
             var timer = setInterval(function () {
-                if ( op <= 0 ) {
+                if (op <= 0) {
                     clearInterval(timer);
                     elem.remove();
                 } else {
                     elem.style.opacity = op;
-                    elem.style.filter  = 'alpha(opacity=' + op * 100 + ")";
+                    elem.style.filter = 'alpha(opacity=' + op * 100 + ")";
                     op -= 0.1;
                 }
             }, 30);
@@ -62,38 +62,38 @@ var Tooltip = (function ( window , document , undefined ) {
     }
 
     // set fade in tooltip box
-    function fadeIn( elem ) {
-        var op    = 0;
+    function fadeIn(elem) {
+        var op = 0;
         var timer = setInterval(function () {
-            if ( op >= 1 ) {
+            if (op >= 1) {
                 clearInterval(timer);
             } else {
                 elem.style.opacity = op;
-                elem.style.filter  = 'alpha(opacity=' + op * 100 + ")";
+                elem.style.filter = 'alpha(opacity=' + op * 100 + ")";
                 op += 0.1;
             }
         }, 10);
     }
 
     // build and fade in tooltip box
-    var _tooltip = function ( selector ) {
-        if ( _thisTooltip ) {
+    var _tooltip = function (selector) {
+        if (_thisTooltip) {
             _thisTooltip.remove();
         }
-        if ( !document.getElementById(selector) && _targetSelector ) {
-            var arrow   = document.createElement('span') ,
-                tooltip = document.createElement('div') ,
-                text    = document.createTextNode(_targetSelector) ,
-                body    = document.querySelector('body');
+        if (!document.getElementById(selector) && _targetSelector) {
+            var arrow = document.createElement('span'),
+                tooltip = document.createElement('div'),
+                text = document.createTextNode(_targetSelector),
+                body = document.querySelector('body');
 
             tooltip.appendChild(text);
             tooltip.appendChild(arrow);
             arrow.className = 'arrow';
-            tooltip.setAttribute('id' , selector);
+            tooltip.setAttribute('id', selector);
             body.appendChild(tooltip);
-            tooltip.style.opacity  = _defaults.opacity;
-            tooltip.style.zIndex   = _defaults.zIndex;
-            tooltip.style.display  = _defaults.display;
+            tooltip.style.opacity = _defaults.opacity;
+            tooltip.style.zIndex = _defaults.zIndex;
+            tooltip.style.display = _defaults.display;
             tooltip.style.position = _defaults.position;
 
             fadeIn(tooltip);
@@ -101,26 +101,26 @@ var Tooltip = (function ( window , document , undefined ) {
     };
 
     // finish tooltip box get, calculate and set x and y position
-    var _tooltipShow = function ( event ) {
+    var _tooltipShow = function (event) {
         event = event || window.event;
-        _target         = event.target;
+        _target = event.target;
         _targetSelector = _target.getAttribute('data-tooltip');
-        _targetText     = _target.getAttribute('title');
+        _targetText = _target.getAttribute('title');
         _tooltip(_selector);
         _thisTooltip = document.getElementById(_selector);
         _targetText ? _target.removeAttribute('title') : '';
 
         // calculate left and top position
-        if ( _thisTooltip ) {
+        if (_thisTooltip) {
             var tooltipWidth = Math.round(_thisTooltip.clientWidth);
-            var targetWidth  = Math.round(_target.clientWidth);
-            var halfWidth    = (tooltipWidth - targetWidth) / 2;
-            var tooltipWrap  = document.getElementById('tooltip-container');
-            var wrapWidht    = Math.round(tooltipWrap.clientWidth);
+            var targetWidth = Math.round(_target.clientWidth);
+            var halfWidth = (tooltipWidth - targetWidth) / 2;
+            var tooltipWrap = document.getElementById('tooltip-container');
+            var wrapWidht = Math.round(tooltipWrap.clientWidth);
 
             // right position
             // get and calculate target and tooltip element position if tooltip element position > wrapper width
-            if ( ((getPosition(_target).x + tooltipWidth) - getPosition(tooltipWrap).x) > tooltipWrap.clientWidth ) {
+            if (((getPosition(_target).x + tooltipWidth) - getPosition(tooltipWrap).x) > tooltipWrap.clientWidth) {
                 x = Math.round((getPosition(tooltipWrap).x + wrapWidht) - tooltipWidth);
             } else {
                 // get target and tooltip element width for left position inside wrapper
@@ -130,7 +130,7 @@ var Tooltip = (function ( window , document , undefined ) {
             // get and calculate top of target and tooltip position
             y = getPosition(_target).y - (_thisTooltip.clientHeight);
 
-            if ( x <= getPosition(tooltipWrap).x ) {
+            if (x <= getPosition(tooltipWrap).x) {
                 // left position
                 // get and calculate target and tooltip element position if tooltip element position < wrapper porsition
                 x = Math.round(getPosition(tooltipWrap).x + 1);
@@ -138,18 +138,18 @@ var Tooltip = (function ( window , document , undefined ) {
 
             // set calculated left and top position
             tooltip.style.left = x + 'px';
-            tooltip.style.top  = y + 'px';
+            tooltip.style.top = y + 'px';
 
             // get, calculate and set position of arrow element
-            var arrowPos        = document.getElementsByClassName('arrow')[0];
+            var arrowPos = document.getElementsByClassName('arrow')[0];
             arrowPos.style.left = Math.round((getPosition(_target).x - getPosition(_thisTooltip).x) + (targetWidth / 2)) + 'px';
         }
     };
 
     // after mouseout event set title back with target content - hide and delete tooltip div
-    var _tooltipHide = function ( event ) {
+    var _tooltipHide = function (event) {
         event = event || window.event;
-        event.target.setAttribute('title' , _targetText);
+        event.target.setAttribute('title', _targetText);
         fadeOut(_thisTooltip);
     };
 
@@ -157,7 +157,7 @@ var Tooltip = (function ( window , document , undefined ) {
         // init finished build tooltip box
         init: _init
     };
-}(window , document));
+}(window, document));
 
 
 
