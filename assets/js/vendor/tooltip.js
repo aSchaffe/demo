@@ -19,17 +19,6 @@ var Tooltip = (function (window, document, undefined) {
         display: 'block'
     };
 
-    // initial tooltop box after mouse event
-    var _init = function (selector) {
-        var anchor = document.querySelectorAll(selector);
-        for (var i = 0; i < anchor.length; i++) {
-            anchor[i].addEventListener('focus', _tooltipShow, false);
-            anchor[i].addEventListener('mouseover', _tooltipShow, false);
-            anchor[i].addEventListener('blur', _tooltipHide, false);
-            anchor[i].addEventListener('mouseout', _tooltipHide, false);
-        }
-    };
-
     // get x and y position off elements
     function getPosition(elem) {
         var x = 0,
@@ -156,8 +145,16 @@ var Tooltip = (function (window, document, undefined) {
     };
 
     return {
-        // init finished build tooltip box
-        init: _init
+        // initial tooltop box after mouse event
+        init : function (selector) {
+            var anchor = document.querySelectorAll(selector);
+            for (var i = 0; i < anchor.length; i++) {
+                anchor[i].addEventListener('focus', _tooltipShow, false);
+                anchor[i].addEventListener('mouseover', _tooltipShow, false);
+                anchor[i].addEventListener('blur', _tooltipHide, false);
+                anchor[i].addEventListener('mouseout', _tooltipHide, false);
+            }
+        }
     };
 }(window, document));
 
