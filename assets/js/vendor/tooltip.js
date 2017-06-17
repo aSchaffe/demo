@@ -68,27 +68,25 @@ var Tooltip = (function (window, document, undefined) {
 
     // build and fade in tooltip box
     var _tooltip = function (selector) {
-        if (_thisTooltip) {
+        if (typeof _thisTooltip !== 'undefined') {
             _thisTooltip.remove();
         }
-        if (!document.getElementById(selector) && _targetSelector) {
-            var arrow = document.createElement('span'),
-                tooltip = document.createElement('div'),
-                text = document.createTextNode(_targetSelector),
-                body = document.querySelector('body');
+        var arrow = document.createElement('span'),
+            tooltip = document.createElement('div'),
+            text = document.createTextNode(_targetSelector),
+            body = document.querySelector('body');
 
-            tooltip.appendChild(text);
-            tooltip.appendChild(arrow);
-            arrow.className = 'arrow';
-            tooltip.setAttribute('id', selector);
-            body.appendChild(tooltip);
-            tooltip.style.opacity = _defaults.opacity;
-            tooltip.style.zIndex = _defaults.zIndex;
-            tooltip.style.display = _defaults.display;
-            tooltip.style.position = _defaults.position;
+        tooltip.appendChild(text);
+        tooltip.appendChild(arrow);
+        arrow.className = 'arrow';
+        tooltip.setAttribute('id', selector);
+        body.appendChild(tooltip);
+        tooltip.style.opacity = _defaults.opacity;
+        tooltip.style.zIndex = _defaults.zIndex;
+        tooltip.style.display = _defaults.display;
+        tooltip.style.position = _defaults.position;
 
-            fadeIn(tooltip);
-        }
+        fadeIn(tooltip);
     };
 
     // finish tooltip box get, calculate and set x and y position
@@ -102,7 +100,7 @@ var Tooltip = (function (window, document, undefined) {
         _thisTooltip = document.getElementById(_selector);
 
         // calculate left and top position
-        if (_thisTooltip) {
+        if (typeof _thisTooltip !== 'undefined') {
             var tooltipWidth = Math.round(_thisTooltip.clientWidth);
             var targetWidth = Math.round(_target.clientWidth);
             var halfWidth = (tooltipWidth - targetWidth) / 2;
@@ -146,7 +144,7 @@ var Tooltip = (function (window, document, undefined) {
 
     return {
         // initial tooltop box after mouse event
-        init : function (selector) {
+        init: function (selector) {
             var anchor = document.querySelectorAll(selector);
             for (var i = 0; i < anchor.length; i++) {
                 anchor[i].addEventListener('focus', _tooltipShow, false);
