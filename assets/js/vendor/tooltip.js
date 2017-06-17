@@ -35,7 +35,7 @@ var Tooltip = (function (window, document, undefined) {
 
     // set fade out tooltip box
     function fadeOut(elem) {
-        if (_thisTooltip) {
+        if (typeof elem !== 'undefined') {
             var op = 1;
             var timer = setInterval(function () {
                 if (op <= 0) {
