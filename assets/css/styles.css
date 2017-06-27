@@ -329,9 +329,6 @@ Copyright Axel Schaffrath
   overflow: hidden;
   height: 100%;
 }
-* [class*="grid"] {
-  position: relative;
-}
 * [class*="grid"]:first-child {
   clear: both;
 }
