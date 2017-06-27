@@ -94,7 +94,7 @@ var Tooltip = (function (window, document, undefined) {
         event = event || window.event;
         _target = event.target;
         _targetSelector = _target.getAttribute('data-tooltip');
-        _targetParent = _target.parentElement.parentElement;
+        _targetParent = _target.parentNode.parentNode;
         _targetText = _target.getAttribute('title');
         _targetText ? _target.removeAttribute('title') : '';
         _tooltip(_selector);
