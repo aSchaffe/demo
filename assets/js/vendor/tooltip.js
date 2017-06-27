@@ -150,8 +150,8 @@ var Tooltip = (function (window, document, undefined) {
             for (var i = 0; i < anchor.length; i++) {
                 anchor[i].addEventListener('focus', _tooltipShow, false);
                 anchor[i].addEventListener('mouseover', _tooltipShow, false);
-                // anchor[i].addEventListener('blur', _tooltipHide, false);
-                // anchor[i].addEventListener('mouseout', _tooltipHide, false);
+                anchor[i].addEventListener('blur', _tooltipHide, false);
+                anchor[i].addEventListener('mouseout', _tooltipHide, false);
             }
         }
     };
