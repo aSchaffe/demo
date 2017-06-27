@@ -7,7 +7,8 @@ var Tooltip = (function (window, document, undefined) {
         _thisTooltip,
         _targetText,
         _targetSelector,
-        _target;
+        _target,
+        _targetParent;
 
     // set init default css
     var _defaults = {
@@ -73,14 +74,13 @@ var Tooltip = (function (window, document, undefined) {
         }
         var arrow = document.createElement('span'),
             tooltip = document.createElement('div'),
-            text = document.createTextNode(_targetSelector),
-            body = document.querySelector('body');
+            text = document.createTextNode(_targetSelector);
 
         tooltip.appendChild(text);
         tooltip.appendChild(arrow);
         arrow.className = 'arrow';
         tooltip.setAttribute('id', selector);
-        body.appendChild(tooltip);
+        _targetParent.appendChild(tooltip);
         tooltip.style.opacity = _defaults.opacity;
         tooltip.style.zIndex = _defaults.zIndex;
         tooltip.style.display = _defaults.display;
@@ -94,6 +94,7 @@ var Tooltip = (function (window, document, undefined) {
         event = event || window.event;
         _target = event.target;
         _targetSelector = _target.getAttribute('data-tooltip');
+        _targetParent = _target.parentElement.parentElement;
         _targetText = _target.getAttribute('title');
         _targetText ? _target.removeAttribute('title') : '';
         _tooltip(_selector);
@@ -149,8 +150,8 @@ var Tooltip = (function (window, document, undefined) {
             for (var i = 0; i < anchor.length; i++) {
                 anchor[i].addEventListener('focus', _tooltipShow, false);
                 anchor[i].addEventListener('mouseover', _tooltipShow, false);
-                anchor[i].addEventListener('blur', _tooltipHide, false);
-                anchor[i].addEventListener('mouseout', _tooltipHide, false);
+                // anchor[i].addEventListener('blur', _tooltipHide, false);
+                // anchor[i].addEventListener('mouseout', _tooltipHide, false);
             }
         }
     };
