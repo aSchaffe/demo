@@ -11,6 +11,7 @@ $(function () {
     Tooltip.init('.icon [data-tooltip]');
 
     if ( $(window).width() < 768 ) {
+        document.addEventListener("touchstart", function(){}, true);
         $(document).mobilMenue();
     }
     var slider     = '.slideanim' ,

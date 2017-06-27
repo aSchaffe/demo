@@ -2237,14 +2237,19 @@ Copyright Axel Schaffrath
   nav.mobil-nav li ul li a {
     padding-left: 1.875rem;
     font-size: 1.225rem;
+    background-color: #ffffff;
   }
   nav.mobil-nav li.hidden > a {
-    background-color: transparent;
+    background-color: #ffffff;
     color: #424242;
   }
-  nav.mobil-nav li.open > a {
+  nav.mobil-nav li.open > a,
+  nav.mobil-nav li:hover > a,
+  nav.mobil-nav li:active > a {
     background-color: #424242;
     color: #ffffff;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
   }
   nav.mobil-nav .level-2 {
     display: none;
@@ -2261,9 +2266,13 @@ Copyright Axel Schaffrath
     background-color: #ffffff;
     color: #424242;
   }
-  nav.mobil-nav .level-2 .active > a {
+  nav.mobil-nav .level-2 .active > a,
+  nav.mobil-nav .level-2:hover > a,
+  nav.mobil-nav .level-2:active > a {
     background-color: #777;
     color: #ffffff;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
   }
   nav.mobil-nav .level-3 {
     display: none;
@@ -2271,9 +2280,12 @@ Copyright Axel Schaffrath
   nav.mobil-nav .level-3 li a {
     padding-left: 3.75rem;
   }
-  nav.mobil-nav .level-3 li a:hover {
-    background-color: transparent;
+  nav.mobil-nav .level-3 li a:hover,
+  nav.mobil-nav .level-3 li a:active {
+    background-color: #ffffff;
     color: #424242;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
   }
   nav.mobil-nav .level-3 li a:before {
     content: '';

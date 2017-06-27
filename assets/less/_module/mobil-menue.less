@@ -45,17 +45,22 @@
       & ul li a {
         padding-left: 1.875rem;
         font-size: 1.225rem;
+        background-color: @whiteColor;
       }
 
       &.hidden > a{
-        background-color : transparent;
+        background-color: @whiteColor;
         color: @gray;
       }
 
 
-      &.open > a {
+      &.open > a,
+      &:hover > a,
+      &:active > a{
         background-color: @gray;
         color: @whiteColor;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
       }
     }
 
@@ -77,9 +82,13 @@
         color: @gray;
       }
 
-      & .active > a{
+      & .active > a,
+      &:hover > a,
+      &:active > a{
         background-color: @gray-light;
         color: @whiteColor;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
       }
     }
 
@@ -91,9 +100,12 @@
         & a {
           padding-left: 3.75rem;
 
-          &:hover {
-            background-color: transparent;
+          &:hover,
+          &:active{
+            background-color: @whiteColor;
             color: @gray;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
           }
 
           &:before {
