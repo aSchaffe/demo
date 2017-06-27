@@ -67,7 +67,7 @@ var Tooltip = (function (window, document, undefined) {
         }, 200);
     }
 
-    // find closeest element of target element to display toolbox inside
+    // find closest element of target element to display toolbox inside
     function getClosestTargetElement(elem, tag) {
         do {
             if (elem.nodeName === tag) {
