@@ -67,6 +67,17 @@ var Tooltip = (function (window, document, undefined) {
         }, 200);
     }
 
+    // find closeest element of target element to display toolbox inside
+    function getClosestTargetElement(elem, tag) {
+        do {
+            if (elem.nodeName === tag) {
+                return elem;
+            }
+        } while (elem = elem.parentNode);
+
+        return null;
+    }
+
     // build and fade in tooltip box
     var _tooltip = function (selector) {
         if (typeof _thisTooltip !== 'undefined') {
@@ -94,7 +105,7 @@ var Tooltip = (function (window, document, undefined) {
         event = event || window.event;
         _target = event.target;
         _targetSelector = _target.getAttribute('data-tooltip');
-        _targetParent = _target.parentNode.parentNode;
+        _targetParent = getClosestTargetElement(this, 'LI');
         _targetText = _target.getAttribute('title');
         _targetText ? _target.removeAttribute('title') : '';
         _tooltip(_selector);
