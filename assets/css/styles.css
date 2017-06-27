@@ -2241,7 +2241,6 @@ Copyright Axel Schaffrath
     color: #424242;
   }
   nav.mobil-nav li.open > a,
-  nav.mobil-nav li:hover > a,
   nav.mobil-nav li:active > a {
     background-color: #424242;
     color: #ffffff;
