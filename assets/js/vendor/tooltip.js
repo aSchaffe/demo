@@ -105,7 +105,7 @@ var Tooltip = (function (window, document, undefined) {
         event = event || window.event;
         _target = event.target;
         _targetSelector = _target.getAttribute('data-tooltip');
-        _targetParent = getClosestTargetElement(this, 'LI');
+        _targetParent = getClosestTargetElement(this, 'UL');
         _targetText = _target.getAttribute('title');
         _targetText ? _target.removeAttribute('title') : '';
         _tooltip(_selector);
@@ -116,7 +116,7 @@ var Tooltip = (function (window, document, undefined) {
             var tooltipWidth = Math.round(_thisTooltip.clientWidth);
             var targetWidth = Math.round(_target.clientWidth);
             var halfWidth = (tooltipWidth - targetWidth) / 2;
-            var tooltipWrap = document.getElementById('tooltip-container');
+            var tooltipWrap = getClosestTargetElement(this, 'DIV');
             var wrapWidht = Math.round(tooltipWrap.clientWidth);
 
             // right position
@@ -167,6 +167,3 @@ var Tooltip = (function (window, document, undefined) {
         }
     };
 }(window, document));
-
-
-
