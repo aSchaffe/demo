@@ -12,12 +12,11 @@ var Tooltip = (function (window, document, undefined) {
 
     // set init default css
     var _defaults = {
-        left: 'auto',
-        top: 'auto',
         opacity: 0,
         zIndex: 9999,
         position: 'absolute',
-        display: 'block'
+        display: 'inline-block',
+        left: 0
     };
 
     // get x and y position off elements
@@ -25,7 +24,7 @@ var Tooltip = (function (window, document, undefined) {
         var x = 0,
             y = 0;
 
-        while (elem != null && (elem.tagName || '').toLowerCase() != 'html') {
+        while (elem !== null && (elem.tagName || '').toLowerCase() !== 'html') {
             x += elem.offsetLeft || 0;
             y += elem.offsetTop || 0;
             elem = elem.offsetParent;
@@ -96,6 +95,7 @@ var Tooltip = (function (window, document, undefined) {
         tooltip.style.zIndex = _defaults.zIndex;
         tooltip.style.display = _defaults.display;
         tooltip.style.position = _defaults.position;
+        tooltip.style.left = _defaults.left;
 
         fadeIn(tooltip);
     };
@@ -105,7 +105,7 @@ var Tooltip = (function (window, document, undefined) {
         event = event || window.event;
         _target = event.target;
         _targetSelector = _target.getAttribute('data-tooltip');
-        _targetParent = getClosestTargetElement(this, 'UL');
+        _targetParent = getClosestTargetElement(this, 'LI');
         _targetText = _target.getAttribute('title');
         _targetText ? _target.removeAttribute('title') : '';
         _tooltip(_selector);
@@ -121,7 +121,7 @@ var Tooltip = (function (window, document, undefined) {
 
             // right position
             // get and calculate target and tooltip element position if tooltip element position > wrapper width
-            if (((getPosition(_target).x + tooltipWidth) - getPosition(tooltipWrap).x) > tooltipWrap.clientWidth) {
+            if (((getPosition(_target).x + tooltipWidth) - getPosition(tooltipWrap).x) >= tooltipWrap.clientWidth) {
                 x = Math.round((getPosition(tooltipWrap).x + wrapWidht) - tooltipWidth);
             } else {
                 // get target and tooltip element width for left position inside wrapper
@@ -134,7 +134,7 @@ var Tooltip = (function (window, document, undefined) {
             if (x <= getPosition(tooltipWrap).x) {
                 // left position
                 // get and calculate target and tooltip element position if tooltip element position < wrapper porsition
-                x = Math.round(getPosition(tooltipWrap).x + 1);
+                x = Math.round(getPosition(tooltipWrap).x);
             }
 
             // set calculated left and top position
