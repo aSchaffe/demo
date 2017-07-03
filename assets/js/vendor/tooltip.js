@@ -79,7 +79,7 @@ var Tooltip = (function (window, document, undefined) {
 
     // build and fade in tooltip box
     var _tooltip = function (selector) {
-        if (typeof _thisTooltip !== 'undefined') {
+        if (typeof _thisTooltip !== 'undefined' && _thisTooltip !== null) {
             _thisTooltip.remove();
         }
         var arrow = document.createElement('span'),
@@ -112,7 +112,7 @@ var Tooltip = (function (window, document, undefined) {
         _thisTooltip = document.getElementById(_selector);
 
         // calculate left and top position
-        if (typeof _thisTooltip !== 'undefined') {
+        if (typeof _thisTooltip !== 'undefined' && _thisTooltip !== null) {
             var tooltipWidth = Math.round(_thisTooltip.clientWidth);
             var targetWidth = Math.round(_target.clientWidth);
             var halfWidth = (tooltipWidth - targetWidth) / 2;
